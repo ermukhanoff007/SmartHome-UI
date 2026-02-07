@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="init: init the project">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/smarthome-ui.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/app.html" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: create sidebar">
       <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarthome/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +53,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/macbook/WebstormProjects/SmartHome-UI/smarthome/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/macbook/WebstormProjects/SmartHome-UI/smarthome/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -79,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770451470557</updated>
       <workItem from="1770451474259" duration="4692000" />
-      <workItem from="1770463633505" duration="4985000" />
+      <workItem from="1770463633505" duration="15099000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -89,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770453085039</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: create sidebar">
+      <option name="closed" value="true" />
+      <created>1770468858555</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770468858555</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: init the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: init the project" />
+    <MESSAGE value="feat: create sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create sidebar" />
   </component>
 </project>

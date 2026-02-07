@@ -3,8 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { MatListItem, MatNavList } from '@angular/material/list';
-import { MatIconButton } from '@angular/material/button';
+import { MatIconButton, MatMiniFabButton } from '@angular/material/button';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Dashboard } from '../dashboard/dashboard';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +17,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatListItem,
     MatSidenavContent,
     MatIconButton,
+    Dashboard,
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',

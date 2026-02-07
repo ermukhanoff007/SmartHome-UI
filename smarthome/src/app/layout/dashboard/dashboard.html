@@ -1,0 +1,4 @@
+<app-tabs [tabs]="tabs()" (OnChangeTab)="onChange($event)"></app-tabs>
+@if (activeTab()) {
+  <p>Active tab: {{ activeTab()!.title }}</p>
+}

@@ -1,6 +1,6 @@
 import { Tab } from '../models/tab';
 
-const MOCK_DATA: Tab[] = [
+export const MOCK_DATA: Tab[] = [
   {
     id: 'overview',
     title: 'Overview',
