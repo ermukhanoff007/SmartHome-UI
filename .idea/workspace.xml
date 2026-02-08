@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: create sidebar">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: create dashboard">
+      <change afterPath="$PROJECT_DIR$/smarthome/src/app/pipes/formatSensorPipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770451470557</updated>
       <workItem from="1770451474259" duration="4692000" />
-      <workItem from="1770463633505" duration="15099000" />
+      <workItem from="1770463633505" duration="29827000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -92,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770468858555</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: create dashboard">
+      <option name="closed" value="true" />
+      <created>1770481738697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770481738697</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: init the project" />
     <MESSAGE value="feat: create sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create sidebar" />
+    <MESSAGE value="feat: create dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create dashboard" />
   </component>
 </project>

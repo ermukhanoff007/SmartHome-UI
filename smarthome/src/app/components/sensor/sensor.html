@@ -1,0 +1,15 @@
+<div class="sensor">
+  @if (layout() === 'horizontalLayout') {
+    <div class="sensor-info">
+      <div>{{ sensor().label }}</div>
+      <mat-icon>{{ sensor().icon }}</mat-icon>
+      <div>{{ sensor() | formatValue }}</div>
+    </div>
+  } @else {
+    <div class="sensor-info-vertical">
+      <mat-icon>{{ sensor().icon }}</mat-icon>
+      <div>{{ sensor().label }}</div>
+      <div class="sensor-value">{{ sensor() | formatValue }}</div>
+    </div>
+  }
+</div>

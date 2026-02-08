@@ -2,10 +2,11 @@ import { Component, computed, signal } from '@angular/core';
 import { Tab } from '../../models/tab';
 import { MOCK_DATA } from '../../mocks/mock.data';
 import { Tabs } from '../../feature/tabs/tabs';
+import { CardList } from '../../components/card-list/card-list';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Tabs],
+  imports: [Tabs, CardList],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

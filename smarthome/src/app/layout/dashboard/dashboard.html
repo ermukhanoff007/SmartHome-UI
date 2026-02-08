@@ -2,3 +2,4 @@
 @if (activeTab()) {
   <p>Active tab: {{ activeTab()!.title }}</p>
 }
+<app-card-list [cards]="activeTab()!.cards"></app-card-list>

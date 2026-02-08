@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    <h3>{{ card()?.title }}</h3>
+    @if (hasGroupToggle()) {
+      <mat-slide-toggle [checked]="groupState()" (change)="toggleAll($event.checked)" />
+    }
+  </div>
+
+  <div class="card-content" [class]="card().layout">
+    @for (item of card()?.items; track item.icon) {
+      @if (item.type === 'sensor') {
+        <app-sensor [sensor]="item" [layout]="card().layout"></app-sensor>
+      }
+      @if (item.type === 'device') {
+        <app-device [device]="item" (changeState)="updateDevice(item, $event)"> </app-device>
+      }
+    }
+  </div>
+</div>
