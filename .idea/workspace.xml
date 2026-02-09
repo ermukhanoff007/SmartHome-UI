@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: almost finished the task">
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.ts" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement directive">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/mcp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.routes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/directives/active-highlight.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/directives/active-highlight.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/card.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/device.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/sensor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/tab.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/app/pipes/formatSensorPipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/src/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.eslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.spec.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +110,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/macbook/WebstormProjects/SmartHome-UI/smarthome/node_modules/prettier",
+    "prettierjs.PrettierConfiguration.Package": "/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/macbook/WebstormProjects/SmartHome-UI/smarthome/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -71,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770451470557</updated>
       <workItem from="1770451474259" duration="4692000" />
-      <workItem from="1770463633505" duration="36961000" />
+      <workItem from="1770463633505" duration="39384000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -105,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770550541026</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: implement directive">
+      <option name="closed" value="true" />
+      <created>1770658684363</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1770658684363</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +184,7 @@
     <MESSAGE value="feat: create sidebar" />
     <MESSAGE value="feat: create dashboard" />
     <MESSAGE value="feat: almost finished the task" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: almost finished the task" />
+    <MESSAGE value="feat: implement directive" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement directive" />
   </component>
 </project>
