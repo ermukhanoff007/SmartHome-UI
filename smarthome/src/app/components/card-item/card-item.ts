@@ -4,10 +4,11 @@ import { Device } from '../../models/device';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { SensorComponent } from '../sensor/sensor';
 import { DeviceComponent } from '../device/device';
+import { ActiveHighlight } from '../../directives/active-highlight';
 
 @Component({
   selector: 'app-card-item',
-  imports: [MatSlideToggle, SensorComponent, DeviceComponent],
+  imports: [MatSlideToggle, SensorComponent, DeviceComponent, ActiveHighlight],
   templateUrl: './card-item.html',
   styleUrl: './card-item.scss',
 })
