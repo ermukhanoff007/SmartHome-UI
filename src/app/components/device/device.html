@@ -1,0 +1,7 @@
+<div class="device">
+  <mat-icon [ngClass]="device().state ? 'active' : ''" (click)="onStateChange()">{{
+    device().icon
+  }}</mat-icon>
+  <span>{{ device().label }}</span>
+  <mat-slide-toggle class="toggle" [checked]="device().state" (change)="onStateChange()" />
+</div>

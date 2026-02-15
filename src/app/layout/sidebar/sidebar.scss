@@ -1,0 +1,45 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar-btn {
+  margin-left: auto;
+}
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+  opacity: 0.8;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
