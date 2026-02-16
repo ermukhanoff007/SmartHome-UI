@@ -17,10 +17,15 @@
       </div>
 
       <mat-nav-list>
-        <a mat-list-item class="sidebar-content">
-          <mat-icon matListItemIcon>dashboard</mat-icon>
-          <span matListItemTitle>Dashboard</span>
-        </a>
+        @if (dashboards$ | async; as dashboards) {
+          @for (dash of dashboards; track dash.id) {
+            <a mat-list-item class="sidebar-content">
+              <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon
+              >-->
+              <span matListItemTitle>{{ dash.title }}</span>
+            </a>
+          }
+        }
       </mat-nav-list>
 
       <div class="sidebar-footer">

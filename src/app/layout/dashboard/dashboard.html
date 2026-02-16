@@ -1,5 +1,6 @@
-<app-tabs [tabs]="tabs()" (OnChangeTab)="onChange($event)"></app-tabs>
-@if (activeTab()) {
-  <p>Active tab: {{ activeTab()!.title }}</p>
+@if (tabs$ | async; as tabs) {
+  <app-tabs [tabs]="tabs" (OnChangeTab)="onChange($event)"></app-tabs>
 }
-<app-card-list [cards]="activeTab()!.cards"></app-card-list>
+@if (activeDashboards$ | async; as activeDashboard) {
+  <app-card-list [cards]="activeDashboard.tabs[0].cards"></app-card-list>
+}

@@ -6,6 +6,8 @@ import { MatListItem, MatNavList } from '@angular/material/list';
 import { MatIconButton } from '@angular/material/button';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Dashboard } from '../dashboard/dashboard';
+import { ApiService } from '../../services/api.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,11 +20,15 @@ import { Dashboard } from '../dashboard/dashboard';
     MatSidenavContent,
     MatIconButton,
     Dashboard,
+    AsyncPipe,
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+  private dashboardService = inject(ApiService);
+  dashboards$ = this.dashboardService.getDashboards();
+
   public isMobile = signal(false);
   private destroyRef = inject(DestroyRef);
   private breakpointObserver = inject(BreakpointObserver);

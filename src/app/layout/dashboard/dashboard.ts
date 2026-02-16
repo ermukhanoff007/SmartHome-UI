@@ -1,22 +1,31 @@
-import { Component, computed, signal } from '@angular/core';
-import { Tab } from '../../models/tab';
-import { MOCK_DATA } from '../../mocks/mock.data';
+import { Component, inject } from '@angular/core';
+
 import { Tabs } from '../../feature/tabs/tabs';
 import { CardList } from '../../components/card-list/card-list';
+import { ApiService } from '../../services/api.service';
+import { BehaviorSubject, EMPTY, switchMap } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Tabs, CardList],
+  imports: [Tabs, CardList, AsyncPipe],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
-  protected tabs = signal<Tab[]>(MOCK_DATA);
-  protected activeTabId = signal(this.tabs()[0].id);
+  private tabsService = inject(ApiService);
+  protected tabs$ = this.tabsService.getDashboards();
 
-  activeTab = computed(() => this.tabs().find((tab) => tab.id === this.activeTabId()));
+  protected activeTabId$ = new BehaviorSubject<string | null>(null);
+
+  protected activeDashboards$ = this.activeTabId$.pipe(
+    switchMap((tabId) => {
+      if (!tabId) return EMPTY;
+      return this.tabsService.getDashboard(tabId);
+    }),
+  );
 
   onChange(id: string) {
-    this.activeTabId.set(id);
+    this.activeTabId$.next(id);
   }
 }
