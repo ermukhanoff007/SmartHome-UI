@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: move to root">
-      <change afterPath="$PROJECT_DIR$/src/app/models/dashboard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/models/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/services/token.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="init: start the task">
+      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +89,7 @@
       <workItem from="1770451474259" duration="4692000" />
       <workItem from="1770463633505" duration="45051000" />
       <workItem from="1771157615352" duration="1082000" />
-      <workItem from="1771184524634" duration="5443000" />
+      <workItem from="1771184524634" duration="10374000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -146,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770661348535</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="init: start the task">
+      <option name="closed" value="true" />
+      <created>1771219136295</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1771219136295</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +160,7 @@
     <MESSAGE value="feat: almost finished the task" />
     <MESSAGE value="feat: implement directive" />
     <MESSAGE value="feat: move to root" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: move to root" />
+    <MESSAGE value="init: start the task" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: start the task" />
   </component>
 </project>
