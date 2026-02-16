@@ -15,4 +15,8 @@ export class TokenService {
   clear(): void {
     localStorage.removeItem(this.TOKEN_KEY);
   }
+
+  exists(): boolean {
+    return !!this.get();
+  }
 }

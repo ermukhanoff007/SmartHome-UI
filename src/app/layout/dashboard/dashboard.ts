@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
-
 import { Tabs } from '../../feature/tabs/tabs';
 import { CardList } from '../../components/card-list/card-list';
-import { ApiService } from '../../services/api.service';
-import { BehaviorSubject, EMPTY, switchMap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { DashboardService } from '../../services/dashboard.service';
+import { BehaviorSubject, combineLatest, map } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,19 +12,24 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
-  private tabsService = inject(ApiService);
-  protected tabs$ = this.tabsService.getDashboards();
+  dashboardService = inject(DashboardService);
+  selectedTabId$ = new BehaviorSubject<string | null>(null);
 
-  protected activeTabId$ = new BehaviorSubject<string | null>(null);
+  selectedTab$ = combineLatest([
+    this.dashboardService.selectedDashboard$,
+    this.selectedTabId$,
+  ]).pipe(
+    map(([dashboard, tabId]) => {
+      if (!dashboard) return null;
 
-  protected activeDashboards$ = this.activeTabId$.pipe(
-    switchMap((tabId) => {
-      if (!tabId) return EMPTY;
-      return this.tabsService.getDashboard(tabId);
+      if (!tabId) {
+        return dashboard.tabs[0];
+      }
+      return dashboard.tabs.find((tab) => tab.id === tabId) ?? dashboard.tabs[0];
     }),
   );
 
-  onChange(id: string) {
-    this.activeTabId$.next(id);
+  onChangeTab(tabId: string) {
+    this.selectedTabId$.next(tabId);
   }
 }

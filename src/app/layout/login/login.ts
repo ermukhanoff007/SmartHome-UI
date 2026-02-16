@@ -22,10 +22,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
   ],
 
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  templateUrl: './login.html',
+  styleUrl: './login.scss',
 })
-export class Login {
+export class LoginPage {
   private fb = inject(FormBuilder);
   private auth = inject(AuthService);
 

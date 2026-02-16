@@ -8,6 +8,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Dashboard } from '../dashboard/dashboard';
 import { ApiService } from '../../services/api.service';
 import { AsyncPipe } from '@angular/common';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -26,8 +27,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
-  private dashboardService = inject(ApiService);
-  dashboards$ = this.dashboardService.getDashboards();
+  dashboardService = inject(DashboardService);
 
   public isMobile = signal(false);
   private destroyRef = inject(DestroyRef);

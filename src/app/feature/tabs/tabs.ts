@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
-import { IDashboards } from '../../models/dashboard';
+import { Tab } from '../../models/tab';
 
 @Component({
   selector: 'app-tabs',
@@ -9,7 +9,7 @@ import { IDashboards } from '../../models/dashboard';
   styleUrl: './tabs.scss',
 })
 export class Tabs {
-  tabs = input<IDashboards[]>([]);
+  tabs = input<Tab[]>([]);
   OnChangeTab = output<string>();
 
   onTabChange(index: number) {

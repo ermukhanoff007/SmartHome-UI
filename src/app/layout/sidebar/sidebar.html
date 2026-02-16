@@ -17,13 +17,15 @@
       </div>
 
       <mat-nav-list>
-        @if (dashboards$ | async; as dashboards) {
-          @for (dash of dashboards; track dash.id) {
-            <a mat-list-item class="sidebar-content">
-              <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon>
-              <span matListItemTitle>{{ dash.title }}</span>
-            </a>
-          }
+        @for (dash of dashboardService.dashboards$ | async; track dash.id) {
+          <a
+            mat-list-item
+            class="sidebar-content"
+            (click)="dashboardService.selectDashboard(dash.id)"
+          >
+            <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon>
+            <span matListItemTitle>{{ dash.title }}</span>
+          </a>
         }
       </mat-nav-list>
 

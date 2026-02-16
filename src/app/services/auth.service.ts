@@ -47,7 +47,7 @@ export class AuthService {
           next: (profile) => {
             this.userSubject.next(profile);
             this.authSubject.next(true);
-            this.router.navigate(['/']);
+            this.router.navigate(['/sidebar']);
           },
         });
       },

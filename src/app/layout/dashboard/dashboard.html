@@ -1,6 +1,9 @@
-@if (tabs$ | async; as tabs) {
-  <app-tabs [tabs]="tabs" (OnChangeTab)="onChange($event)"></app-tabs>
-}
-@if (activeDashboards$ | async; as activeDashboard) {
-  <app-card-list [cards]="activeDashboard.tabs[0].cards"></app-card-list>
+<app-tabs
+  [tabs]="(dashboardService.selectedDashboard$ | async)?.tabs ?? []"
+  (OnChangeTab)="onChangeTab($event)"
+>
+</app-tabs>
+
+@if (selectedTab$ | async; as dash) {
+  <app-card-list [cards]="dash.cards"></app-card-list>
 }
