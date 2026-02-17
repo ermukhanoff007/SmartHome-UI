@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement auth-service">
-      <change afterPath="$PROJECT_DIR$/src/app/auth.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/interceptors/auth.interceptors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/services/dashboard.service.ts" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement the route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/dashboard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/token.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771226078046</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: implement the route">
+      <option name="closed" value="true" />
+      <created>1771312935273</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1771312935273</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +199,7 @@
     <MESSAGE value="feat: move to root" />
     <MESSAGE value="init: start the task" />
     <MESSAGE value="feat: implement auth-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement auth-service" />
+    <MESSAGE value="feat: implement the route" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement the route" />
   </component>
 </project>

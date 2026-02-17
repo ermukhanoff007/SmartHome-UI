@@ -1,4 +1,3 @@
-// sidebar.ts
 import { Component, signal, inject, DestroyRef } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
@@ -9,7 +8,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
 import { DashboardService } from '../../services/dashboard.service';
-import { Dashboard } from '../dashboard/dashboard';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -24,7 +23,6 @@ import { Dashboard } from '../dashboard/dashboard';
     RouterLink,
     RouterLinkActive,
     AsyncPipe,
-    Dashboard,
     RouterOutlet,
   ],
   templateUrl: './sidebar.html',
@@ -32,6 +30,7 @@ import { Dashboard } from '../dashboard/dashboard';
 })
 export class Sidebar {
   dashboardService = inject(DashboardService);
+  authService = inject(AuthService);
 
   public isMobile = signal(false);
   private destroyRef = inject(DestroyRef);

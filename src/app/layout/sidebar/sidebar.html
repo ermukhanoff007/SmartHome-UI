@@ -31,7 +31,11 @@
 
       <div class="sidebar-footer">
         <mat-icon>account_circle</mat-icon>
-        <span>User</span>
+        @if (authService.user$ | async; as user) {
+          <span>{{ user.fullName }}</span>
+          <span>{{ user.initials }}</span>
+        }
+        <button class="sidebar-logout" (click)="authService.logout()">Log Out</button>
       </div>
     </div>
   </mat-sidenav>

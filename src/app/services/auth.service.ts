@@ -12,7 +12,6 @@ export class AuthService {
   private router = inject(Router);
 
   private authSubject = new BehaviorSubject<boolean>(false);
-  auth$ = this.authSubject.asObservable();
 
   private userSubject = new BehaviorSubject<User | null>(null);
   user$ = this.userSubject.asObservable();
@@ -47,7 +46,7 @@ export class AuthService {
           next: (profile) => {
             this.userSubject.next(profile);
             this.authSubject.next(true);
-            this.router.navigate(['/sidebar']);
+            this.router.navigate(['/dashboard']);
           },
         });
       },
