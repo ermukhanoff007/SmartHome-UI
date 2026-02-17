@@ -11,12 +11,14 @@ export class DashboardService {
 
   selectedDashboardId$ = new BehaviorSubject<string>('overview');
 
+  setFromRoute(dashboardId: string): void {
+    if (dashboardId && dashboardId !== this.selectedDashboardId$.getValue()) {
+      this.selectedDashboardId$.next(dashboardId);
+    }
+  }
   selectedDashboard$ = this.selectedDashboardId$.pipe(
     switchMap((dashboardId: string) => {
       return this.api.getDashboard(dashboardId);
     }),
   );
-  selectDashboard(id: string) {
-    this.selectedDashboardId$.next(id);
-  }
 }

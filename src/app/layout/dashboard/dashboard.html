@@ -1,3 +1,9 @@
+@if (isEmpty$ | async) {
+  <div class="empty-state">
+    <h2>No dashboards available</h2>
+  </div>
+}
+
 <app-tabs
   [tabs]="(dashboardService.selectedDashboard$ | async)?.tabs ?? []"
   (OnChangeTab)="onChangeTab($event)"

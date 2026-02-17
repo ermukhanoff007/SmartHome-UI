@@ -18,14 +18,14 @@
 
       <mat-nav-list>
         @for (dash of dashboardService.dashboards$ | async; track dash.id) {
-          <a
-            mat-list-item
-            class="sidebar-content"
-            (click)="dashboardService.selectDashboard(dash.id)"
+          <mat-list-item
+            class="sidebar-navi"
+            [routerLink]="['/dashboard', dash.id]"
+            routerLinkActive="active"
           >
             <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon>
-            <span matListItemTitle>{{ dash.title }}</span>
-          </a>
+            {{ dash.title }}
+          </mat-list-item>
         }
       </mat-nav-list>
 
@@ -45,6 +45,6 @@
         <span>Smart Home</span>
       </div>
     }
-    <app-dashboard></app-dashboard>
+    <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,14 +1,15 @@
+// sidebar.ts
 import { Component, signal, inject, DestroyRef } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
 import { MatListItem, MatNavList } from '@angular/material/list';
 import { MatIconButton } from '@angular/material/button';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Dashboard } from '../dashboard/dashboard';
-import { ApiService } from '../../services/api.service';
 import { AsyncPipe } from '@angular/common';
 import { DashboardService } from '../../services/dashboard.service';
+import { Dashboard } from '../dashboard/dashboard';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,8 +21,11 @@ import { DashboardService } from '../../services/dashboard.service';
     MatListItem,
     MatSidenavContent,
     MatIconButton,
-    Dashboard,
+    RouterLink,
+    RouterLinkActive,
     AsyncPipe,
+    Dashboard,
+    RouterOutlet,
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
