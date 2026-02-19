@@ -23,7 +23,8 @@ export const dashboardResolver: ResolveFn<DashboardRouteData> = (route) => {
 
       const dashboardIds = dashboards.map((d: { id: string }) => d.id);
       const validDashboardId = dashboardIds.includes(requestedDashboardId ?? '')
-        ? requestedDashboardId!
+        ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          requestedDashboardId!
         : dashboardIds[0];
 
       if (validDashboardId !== requestedDashboardId) {

@@ -1,12 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { Sidebar } from './layout/sidebar/sidebar';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth.service';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [Sidebar, RouterOutlet, AsyncPipe],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
