@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { Sidebar } from './layout/sidebar/sidebar';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
-/* eslint-disable @typescript-eslint/no-extraneous-class */
 @Component({
   selector: 'app-root',
-  imports: [Sidebar],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {}
-/* eslint-enable @typescript-eslint/no-extraneous-class */
+export class App {
+  auth = inject(AuthService);
+
+  constructor() {
+    this.auth.init();
+  }
+}

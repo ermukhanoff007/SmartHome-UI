@@ -1,70 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement directive">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement the route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/mcp.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-item/card-item.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/card-list/card-list.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/device/device.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/components/sensor/sensor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/directives/active-highlight.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/directives/active-highlight.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/feature/tabs/tabs.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/dashboard/dashboard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/layout/sidebar/sidebar.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/mocks/mock.data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/card.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/device.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/sensor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/models/tab.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/app/pipes/formatSensorPipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.eslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,24 +41,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "develop",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/macbook/WebstormProjects/SmartHome-UI/smarthome/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -131,7 +89,9 @@
       <option name="presentableId" value="Default" />
       <updated>1770451470557</updated>
       <workItem from="1770451474259" duration="4692000" />
-      <workItem from="1770463633505" duration="39384000" />
+      <workItem from="1770463633505" duration="45051000" />
+      <workItem from="1771157615352" duration="1082000" />
+      <workItem from="1771184524634" duration="27011000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -173,11 +133,62 @@
       <option name="project" value="LOCAL" />
       <updated>1770658684363</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: move to root">
+      <option name="closed" value="true" />
+      <created>1770661348531</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1770661348535</updated>
+    </task>
+    <task id="LOCAL-00007" summary="init: start the task">
+      <option name="closed" value="true" />
+      <created>1771219136295</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1771219136295</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: implement auth-service">
+      <option name="closed" value="true" />
+      <created>1771226051811</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1771226051811</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: implement auth-service">
+      <option name="closed" value="true" />
+      <created>1771226078046</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1771226078046</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: implement the route">
+      <option name="closed" value="true" />
+      <created>1771312935273</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1771312935273</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: init the project" />
@@ -185,6 +196,10 @@
     <MESSAGE value="feat: create dashboard" />
     <MESSAGE value="feat: almost finished the task" />
     <MESSAGE value="feat: implement directive" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement directive" />
+    <MESSAGE value="feat: move to root" />
+    <MESSAGE value="init: start the task" />
+    <MESSAGE value="feat: implement auth-service" />
+    <MESSAGE value="feat: implement the route" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement the route" />
   </component>
 </project>

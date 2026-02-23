@@ -1,5 +1,15 @@
-<app-tabs [tabs]="tabs()" (OnChangeTab)="onChange($event)"></app-tabs>
-@if (activeTab()) {
-  <p>Active tab: {{ activeTab()!.title }}</p>
+@if (isEmpty$ | async) {
+  <div class="empty-state">
+    <h2>No dashboards available</h2>
+  </div>
 }
-<app-card-list [cards]="activeTab()!.cards"></app-card-list>
+
+<app-tabs
+  [tabs]="(dashboardService.selectedDashboard$ | async)?.tabs ?? []"
+  (OnChangeTab)="onChangeTab($event)"
+>
+</app-tabs>
+
+@if (selectedTab$ | async; as dash) {
+  <app-card-list [cards]="dash.cards"></app-card-list>
+}

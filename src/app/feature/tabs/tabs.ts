@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { Tab } from '../../models/tab';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { Tab } from '../../models/tab';
 
 @Component({
   selector: 'app-tabs',
