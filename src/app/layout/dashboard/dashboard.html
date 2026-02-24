@@ -1,15 +1,11 @@
-@if (isEmpty$ | async) {
+@if (!(dashboard$ | async)?.tabs?.length) {
   <div class="empty-state">
     <h2>No dashboards available</h2>
   </div>
 }
 
-<app-tabs
-  [tabs]="(dashboardService.selectedDashboard$ | async)?.tabs ?? []"
-  (OnChangeTab)="onChangeTab($event)"
->
-</app-tabs>
+<app-tabs [tabs]="(dashboard$ | async)?.tabs ?? []" (OnChangeTab)="onChangeTab($event)"> </app-tabs>
 
-@if (selectedTab$ | async; as dash) {
+@if (tab$ | async; as dash) {
   <app-card-list [cards]="dash.cards"></app-card-list>
 }
