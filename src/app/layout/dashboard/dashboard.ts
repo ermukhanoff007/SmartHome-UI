@@ -2,54 +2,45 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Tabs } from '../../feature/tabs/tabs';
 import { CardList } from '../../components/card-list/card-list';
 import { AsyncPipe } from '@angular/common';
-import { DashboardService } from '../../services/dashboard.service';
-import { BehaviorSubject, combineLatest, map } from 'rxjs';
+
 import { ActivatedRoute } from '@angular/router';
-import { DashboardRouteData } from '../../dashboard.resolver';
+import { Store } from '@ngrx/store';
+import {
+  selectSelectedDashboard,
+  selectSelectedTab,
+} from '../../store/dashboard/dashboard.selector';
+import * as DashboardActions from '../../store/dashboard/dashboard.actions';
 
 @Component({
   selector: 'app-dashboard',
   imports: [Tabs, CardList, AsyncPipe],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
+  standalone: true,
 })
 export class Dashboard implements OnInit {
-  dashboardService = inject(DashboardService);
+  private store = inject(Store);
   private route = inject(ActivatedRoute);
-  selectedTabId$ = new BehaviorSubject<string | null>(null);
 
-  isEmpty$ = this.route.data.pipe(
-    map((data) => {
-      const routeData = data['routeData'] as DashboardRouteData;
-      return !routeData?.dashboardId;
-    }),
-  );
+  dashboard$ = this.store.select(selectSelectedDashboard);
+  tab$ = this.store.select(selectSelectedTab);
 
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      const routeData = data['routeData'] as DashboardRouteData;
-      if (!routeData?.dashboardId) return;
+    this.route.paramMap.subscribe((param) => {
+      const dashboardId = param.get('dashboardId');
+      const tabId = param.get('tabId');
 
-      this.dashboardService.setFromRoute(routeData.dashboardId);
-      this.selectedTabId$.next(routeData.tabId ?? null);
+      if (!dashboardId) return;
+
+      this.store.dispatch(DashboardActions.loadDashboard({ dashboardId }));
+
+      if (tabId) {
+        this.store.dispatch(DashboardActions.selectTab({ tabId }));
+      }
     });
   }
 
-  selectedTab$ = combineLatest([
-    this.dashboardService.selectedDashboard$,
-    this.selectedTabId$,
-  ]).pipe(
-    map(([dashboard, tabId]) => {
-      if (!dashboard) return null;
-
-      if (!tabId) {
-        return dashboard.tabs[0];
-      }
-      return dashboard.tabs.find((tab) => tab.id === tabId) ?? dashboard.tabs[0];
-    }),
-  );
-
   onChangeTab(tabId: string) {
-    this.selectedTabId$.next(tabId);
+    this.store.dispatch(DashboardActions.selectTab({ tabId }));
   }
 }

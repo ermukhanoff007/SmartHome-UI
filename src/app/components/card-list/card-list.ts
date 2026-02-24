@@ -7,6 +7,7 @@ import { CardItem } from '../card-item/card-item';
   imports: [CardItem],
   templateUrl: './card-list.html',
   styleUrl: './card-list.scss',
+  standalone: true,
 })
 export class CardList {
   public cards = input.required<Card[]>();

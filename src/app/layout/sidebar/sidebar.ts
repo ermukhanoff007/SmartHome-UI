@@ -27,6 +27,7 @@ import { AuthService } from '../../services/auth.service';
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
+  standalone: true,
 })
 export class Sidebar {
   dashboardService = inject(DashboardService);

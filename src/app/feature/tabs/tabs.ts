@@ -7,6 +7,7 @@ import { Tab } from '../../models/tab';
   imports: [MatTabGroup, MatTab],
   templateUrl: './tabs.html',
   styleUrl: './tabs.scss',
+  standalone: true,
 })
 export class Tabs {
   tabs = input<Tab[]>([]);
