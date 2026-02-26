@@ -20,4 +20,7 @@ export const selectTab = createAction('[Dashboard] Select Tab', props<{ tabId: s
 
 export const enterEditMode = createAction('[Dashboard] Enter Edit mode]');
 export const exitEditMode = createAction('[Dashboard] Exit Edit Mode');
+export const saveChanges = createAction('[Dashboard] Save Changes');
 export const discardChange = createAction('[Dashboard] Discard Change');
+
+export const addTab = createAction('[Dashboard] Add Tab', props<{ title: string }>());

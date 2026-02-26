@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import * as dashboardActions from './dashboard.actions';
 import { initialState } from './dashboard.state';
+import { toKebab } from '../../utils/to-kebab.function';
 
 export const dashboardReducer = createReducer(
   initialState,
@@ -13,6 +14,7 @@ export const dashboardReducer = createReducer(
   on(dashboardActions.loadDashboardSuccess, (state, { dashboard }) => ({
     ...state,
     selectedDashboard: dashboard,
+    selectedTabId: dashboard.tabs[0].id ?? null,
     loading: false,
   })),
 
@@ -42,4 +44,31 @@ export const dashboardReducer = createReducer(
     snapshot: null,
     selectedDashboard: state.snapshot,
   })),
+
+  on(dashboardActions.addTab, (state, { title }) => {
+    if (!state.selectedDashboard) return state;
+
+    const baseId = toKebab(title);
+
+    let uniqueId = baseId;
+    let counter = 1;
+
+    while (state.selectedDashboard.tabs.some((tab) => tab.id === uniqueId)) {
+      uniqueId = `${baseId}-${counter++}`;
+    }
+
+    const newTab = {
+      id: uniqueId,
+      title,
+      cards: [],
+    };
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: [...state.selectedDashboard.tabs, newTab],
+      },
+    };
+  }),
 );

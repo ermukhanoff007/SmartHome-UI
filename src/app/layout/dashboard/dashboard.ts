@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Tabs } from '../../feature/tabs/tabs';
 import { CardList } from '../../components/card-list/card-list';
 import { AsyncPipe } from '@angular/common';
@@ -10,10 +10,14 @@ import {
   selectSelectedTab,
 } from '../../store/dashboard/dashboard.selector';
 import * as DashboardActions from '../../store/dashboard/dashboard.actions';
+import { MatIcon } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTabModal } from '../../feature/modals/add-tab-modal/add-tab-modal';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Tabs, CardList, AsyncPipe],
+  imports: [Tabs, CardList, AsyncPipe, MatIcon, ReactiveFormsModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
   standalone: true,
@@ -21,6 +25,9 @@ import * as DashboardActions from '../../store/dashboard/dashboard.actions';
 export class Dashboard implements OnInit {
   private store = inject(Store);
   private route = inject(ActivatedRoute);
+  private dialog = inject(MatDialog);
+
+  editMode = signal(false);
 
   dashboard$ = this.store.select(selectSelectedDashboard);
   tab$ = this.store.select(selectSelectedTab);
@@ -43,4 +50,32 @@ export class Dashboard implements OnInit {
   onChangeTab(tabId: string) {
     this.store.dispatch(DashboardActions.selectTab({ tabId }));
   }
+
+  enterEdit() {
+    this.store.dispatch(DashboardActions.enterEditMode());
+    this.editMode.set(true);
+  }
+
+  save() {
+    this.store.dispatch(DashboardActions.saveChanges());
+    this.editMode.set(false);
+  }
+
+  discard() {
+    this.store.dispatch(DashboardActions.discardChange());
+    this.editMode.set(false);
+  }
+
+  openAddTabDialog() {
+    const dialogRef = this.dialog.open(AddTabModal, {
+      width: '400px',
+    });
+    dialogRef.afterClosed().subscribe((title) => {
+      if (!title) return;
+
+      this.store.dispatch(DashboardActions.addTab({ title }));
+    });
+  }
+
+  protected readonly addEventListener = addEventListener;
 }

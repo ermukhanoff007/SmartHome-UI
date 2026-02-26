@@ -2,12 +2,15 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ApiService } from '../../services/api.service';
 import * as DashboardActions from './dashboard.actions';
-import { catchError, map, of, switchMap } from 'rxjs';
+import { catchError, EMPTY, map, of, switchMap, withLatestFrom } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectSelectedDashboard } from './dashboard.selector';
 
 @Injectable()
 export class DashboardEffects {
-  actions$ = inject(Actions);
-  api = inject(ApiService);
+  private actions$ = inject(Actions);
+  private api = inject(ApiService);
+  private store = inject(Store);
 
   loadDashboard$ = createEffect(() =>
     this.actions$.pipe(
@@ -18,6 +21,20 @@ export class DashboardEffects {
           catchError((error) => of(DashboardActions.loadDashboardFailure({ error }))),
         ),
       ),
+    ),
+  );
+
+  saveDashboard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(DashboardActions.saveChanges),
+      withLatestFrom(this.store.select(selectSelectedDashboard)),
+      switchMap(([_, dashboard]) => {
+        if (!dashboard) return EMPTY;
+        return this.api.updateDashboard(dashboard.id, dashboard).pipe(
+          map(() => DashboardActions.exitEditMode()),
+          catchError((error) => of(DashboardActions.loadDashboardFailure({ error }))),
+        );
+      }),
     ),
   );
 }
