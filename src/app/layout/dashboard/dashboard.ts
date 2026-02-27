@@ -77,5 +77,13 @@ export class Dashboard implements OnInit {
     });
   }
 
-  protected readonly addEventListener = addEventListener;
+  removeTab(tabId: string) {
+    this.store.dispatch(DashboardActions.removeTab({ tabId }));
+  }
+  renameTab({ tabId, newTitle }: { tabId: string; newTitle: string }) {
+    this.store.dispatch(DashboardActions.renameTab({ tabId, newTitle }));
+  }
+  moveTab({ tabId, direction }: { tabId: string; direction: 'left' | 'right' }) {
+    this.store.dispatch(DashboardActions.reorderTab({ tabId, direction }));
+  }
 }

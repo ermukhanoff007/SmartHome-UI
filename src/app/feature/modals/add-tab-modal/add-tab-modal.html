@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Tab Title</mat-label>
+      <input matInput formControlName="title" />
+
+      @if (form.controls.title.invalid) {
+        <mat-error> Tittle is required </mat-error>
+      }
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="close()">Cancel</button>
+    <button mat-raised-button type="submit">Save</button>
+  </mat-dialog-actions>
+</form>

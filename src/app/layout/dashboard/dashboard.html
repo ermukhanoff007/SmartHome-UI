@@ -4,7 +4,14 @@
   </div>
 }
 <div class="tabs-container">
-  <app-tabs [tabs]="(dashboard$ | async)?.tabs ?? []" (OnChangeTab)="onChangeTab($event)">
+  <app-tabs
+    [tabs]="(dashboard$ | async)?.tabs ?? []"
+    [editMode]="editMode()"
+    (OnChangeTab)="onChangeTab($event)"
+    (tabMove)="moveTab($event)"
+    (removeTab)="removeTab($event)"
+    (renameTab)="renameTab($event)"
+  >
   </app-tabs>
 
   @if (!editMode()) {

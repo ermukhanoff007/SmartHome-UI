@@ -1,5 +1,35 @@
 <mat-tab-group class="tabs-block" (selectedIndexChange)="onTabChange($event)">
-  @for (tab of tabs(); track tab.id) {
-    <mat-tab [label]="tab.title"></mat-tab>
+  @for (tab of tabs(); track tab.id; let i = $index) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span>{{ tab.title }}</span>
+        @if (editMode()) {
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="onTabRename(tab.id, tab.title); $event.stopPropagation()"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="removeTab.emit(tab.id); $event.stopPropagation()"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          @if (i > 0) {
+            <button mat-icon-button (click)="onTabMove(tab.id, 'left'); $event.stopPropagation()">
+              <mat-icon>arrow_left</mat-icon>
+            </button>
+          }
+          @if (i < tabs().length - 1) {
+            <button mat-icon-button (click)="onTabMove(tab.id, 'right'); $event.stopPropagation()">
+              <mat-icon>arrow_right</mat-icon>
+            </button>
+          }
+        }
+      </ng-template>
+    </mat-tab>
   }
 </mat-tab-group>

@@ -71,4 +71,51 @@ export const dashboardReducer = createReducer(
       },
     };
   }),
+
+  on(dashboardActions.removeTab, (state, { tabId }) => {
+    if (!state.selectedDashboard) return state;
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: state.selectedDashboard.tabs.filter((tab) => tab.id !== tabId),
+      },
+    };
+  }),
+
+  on(dashboardActions.renameTab, (state, { tabId, newTitle }) => {
+    if (!state.selectedDashboard) return state;
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: state.selectedDashboard.tabs.map((tab) =>
+          tab.id === tabId ? { ...tab, title: newTitle } : tab,
+        ),
+      },
+    };
+  }),
+
+  on(dashboardActions.reorderTab, (state, { tabId, direction }) => {
+    if (!state.selectedDashboard) return state;
+
+    const idx = state.selectedDashboard.tabs.findIndex((tab) => tab.id === tabId);
+    const move = direction === 'left' ? -1 : 1;
+    const newIdx = idx + move;
+
+    if (newIdx < 0 || newIdx > state.selectedDashboard.tabs.length) return state;
+
+    const newTabs = [...state.selectedDashboard.tabs];
+
+    [newTabs[idx], newTabs[newIdx]] = [newTabs[newIdx], newTabs[idx]];
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: newTabs,
+      },
+    };
+  }),
 );
