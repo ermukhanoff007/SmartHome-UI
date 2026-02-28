@@ -26,3 +26,7 @@
 .active-card {
   border: 1px solid aqua;
 }
+.card-content-container {
+  display: flex;
+  flex-direction: column;
+}

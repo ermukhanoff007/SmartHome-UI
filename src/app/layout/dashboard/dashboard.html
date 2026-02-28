@@ -31,7 +31,11 @@
 @if (tab$ | async; as dash) {
   <div class="cards-container">
     <div class="cards-item">
-      <app-card-list [cards]="dash.cards"></app-card-list>
+      <app-card-list
+        [cards]="dash.cards"
+        (edit)="onEditCard($event)"
+        [tabId]="dash.id"
+      ></app-card-list>
     </div>
     <div class="add-card-container">
       <button class="add-card-btn" mat-raised-button (click)="addCard(dash.id)">Add Card</button>

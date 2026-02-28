@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { CardItem } from '../card-item/card-item';
 
@@ -11,4 +11,10 @@ import { CardItem } from '../card-item/card-item';
 })
 export class CardList {
   public cards = input.required<Card[]>();
+  tabId = input.required<string>();
+  edit = output<{ tabId: string; card: Card }>();
+
+  onEdit(event: { tabId: string; card: Card }) {
+    this.edit.emit(event);
+  }
 }

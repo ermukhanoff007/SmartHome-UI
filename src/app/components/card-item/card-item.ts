@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { Device } from '../../models/device';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
@@ -14,6 +14,8 @@ import { ActiveHighlight } from '../../directives/active-highlight';
 })
 export class CardItem {
   public card = input.required<Card>();
+  tabId = input.required<string>();
+  edit = output<{ tabId: string; card: Card }>();
 
   devices = computed<Device[]>(
     () => this.card()?.items.filter((i) => i.type === 'device') as Device[],
@@ -32,5 +34,10 @@ export class CardItem {
     device.state = state;
   }
 
-  protected readonly onchange = onchange;
+  onEdit() {
+    this.edit.emit({
+      tabId: this.tabId(),
+      card: this.card(),
+    });
+  }
 }

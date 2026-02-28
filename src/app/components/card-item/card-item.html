@@ -6,14 +6,19 @@
     }
   </div>
 
-  <div class="card-content" [class]="card().layout">
-    @for (item of card()?.items; track item.icon) {
-      @if (item.type === 'sensor') {
-        <app-sensor [sensor]="item" [layout]="card().layout"></app-sensor>
+  <div class="card-content-container">
+    <div class="card-content" [class]="card().layout">
+      @for (item of card()?.items; track item.icon) {
+        @if (item.type === 'sensor') {
+          <app-sensor [sensor]="item" [layout]="card().layout"></app-sensor>
+        }
+        @if (item.type === 'device') {
+          <app-device [device]="item" (changeState)="updateDevice(item, $event)"> </app-device>
+        }
       }
-      @if (item.type === 'device') {
-        <app-device [device]="item" (changeState)="updateDevice(item, $event)"> </app-device>
-      }
-    }
+    </div>
+    <div>
+      <button (click)="onEdit()">:</button>
+    </div>
   </div>
 </div>

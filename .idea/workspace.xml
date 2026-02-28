@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement interactions with tab">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement addCard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/add-card-modal/add-card-modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/add-card-modal/add-card-modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/add-card-modal/add-card-modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/add-card-modal/add-card-modal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/mocks/mock.data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/device.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/device.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/sensor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/sensor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +37,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -216,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772207584835</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: implement addCard">
+      <option name="closed" value="true" />
+      <created>1772269758130</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1772269758130</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +268,7 @@
     <MESSAGE value="feat: implement NgRX, dashboard-store" />
     <MESSAGE value="feat: implement editMode, addTab dialog" />
     <MESSAGE value="feat: implement interactions with tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement interactions with tab" />
+    <MESSAGE value="feat: implement addCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement addCard" />
   </component>
 </project>

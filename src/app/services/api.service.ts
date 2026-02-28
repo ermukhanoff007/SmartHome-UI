@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IDashboards } from '../models/dashboard';
 import { Device } from '../models/device';
+import { Sensor } from '../models/sensor';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -35,10 +36,10 @@ export class ApiService {
     return this.http.delete(`${this.base}/dashboards/${id}`);
   }
   getDevices() {
-    return this.http.get<Device[]>(`${this.base}/devices`);
+    return this.http.get<Device[] | Sensor[]>(`${this.base}/devices`);
   }
 
   patchDevice(id: string, state: boolean) {
-    return this.http.patch<Device>(`${this.base}/devices/${id}`, { state });
+    return this.http.patch<Device | Sensor>(`${this.base}/devices/${id}`, { state });
   }
 }

@@ -1,5 +1,5 @@
 <div class="card-list">
   @for (card of cards(); track card.id) {
-    <app-card-item [card]="card"> </app-card-item>
+    <app-card-item [card]="card" (edit)="onEdit($event)" [tabId]="tabId()"> </app-card-item>
   }
 </div>

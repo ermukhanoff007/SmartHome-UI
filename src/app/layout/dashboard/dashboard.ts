@@ -15,8 +15,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTabModal } from '../../feature/modals/add-tab-modal/add-tab-modal';
 import { AddCardModal } from '../../feature/modals/add-card-modal/add-card-modal';
-import { addCard } from '../../store/dashboard/dashboard.actions';
+import { addCard, editCardContent } from '../../store/dashboard/dashboard.actions';
 import { MatButton } from '@angular/material/button';
+import { Card } from '../../models/card.model';
+import { EditCardModal } from '../../feature/modals/edit-card-modal/edit-card-modal';
 
 @Component({
   selector: 'app-dashboard',
@@ -103,6 +105,23 @@ export class Dashboard implements OnInit {
           }),
         );
       }
+    });
+  }
+
+  onEditCard(event: { tabId: string; card: Card }) {
+    const dialogRef = this.dialog.open(EditCardModal);
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.store.dispatch(
+          editCardContent({
+            tabId: event.tabId,
+            cardId: event.card.id,
+            title: res.title,
+            items: res.items,
+          }),
+        );
+      }
+      console.log(res);
     });
   }
 }
