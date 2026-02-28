@@ -57,3 +57,19 @@
   color: white;
   font-size: 20px;
 }
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  height: 90dvh;
+}
+.add-card-container {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.add-card-container {
+  margin-right: 30px;
+}

@@ -1,5 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 import { IDashboards } from '../../models/dashboard';
+import { CardLayout } from '../../models/card.model';
+import { Device } from '../../models/device';
+import { Sensor } from '../../models/sensor';
 
 export const loadDashboard = createAction(
   '[Dashboard] Load Dashboard',
@@ -32,4 +35,19 @@ export const renameTab = createAction(
 export const reorderTab = createAction(
   '[Dashboard] Reorder Tab',
   props<{ tabId: string; direction: 'left' | 'right' }>(),
+);
+
+export const addCard = createAction(
+  ' Dashboard] Add Card',
+  props<{ tabId: string; layout: CardLayout; title: string }>(),
+);
+
+export const editCardContent = createAction(
+  '[Dashboard] Edit Card',
+  props<{ tabId: string; cardId: string; title: string; items: (Device | Sensor)[] }>(),
+);
+
+export const reorderCard = createAction(
+  '[Dashboard] Reorder Card',
+  props<{ tabId: string; cardId: string; newIdx: number }>(),
 );

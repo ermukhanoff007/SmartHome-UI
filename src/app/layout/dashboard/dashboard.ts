@@ -14,10 +14,13 @@ import { MatIcon } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTabModal } from '../../feature/modals/add-tab-modal/add-tab-modal';
+import { AddCardModal } from '../../feature/modals/add-card-modal/add-card-modal';
+import { addCard } from '../../store/dashboard/dashboard.actions';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Tabs, CardList, AsyncPipe, MatIcon, ReactiveFormsModule],
+  imports: [Tabs, CardList, AsyncPipe, MatIcon, ReactiveFormsModule, MatButton],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
   standalone: true,
@@ -85,5 +88,21 @@ export class Dashboard implements OnInit {
   }
   moveTab({ tabId, direction }: { tabId: string; direction: 'left' | 'right' }) {
     this.store.dispatch(DashboardActions.reorderTab({ tabId, direction }));
+  }
+
+  addCard(tabId: string) {
+    const dialogRef = this.dialog.open(AddCardModal);
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.store.dispatch(
+          addCard({
+            tabId,
+            layout: res.layout,
+            title: res.title,
+          }),
+        );
+      }
+    });
   }
 }

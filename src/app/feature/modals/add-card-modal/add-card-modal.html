@@ -1,0 +1,21 @@
+<div class="add-card-modal">
+  <h2>Add Card</h2>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label>Card Title (optional)</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+
+  <div class="layout-buttons">
+    <button mat-raised-button (click)="select('singleDevice')">Single Device</button>
+    <button mat-raised-button (click)="select('horizontalLayout')">Horizontal Layout</button>
+    <button mat-raised-button (click)="select('verticalLayout')">Vertical Layout</button>
+  </div>
+
+  <div style="margin-top: 20px">
+    <button mat-raised-button color="primary" [disabled]="!selectedLayout" (click)="save()">
+      Add
+    </button>
+    <button mat-button (click)="close()">Cancel</button>
+  </div>
+</div>

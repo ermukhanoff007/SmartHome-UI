@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement editMode, addTab dialog">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement interactions with tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/mocks/mock.data.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" afterDir="false" />
     </list>
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772093999976</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: implement interactions with tab">
+      <option name="closed" value="true" />
+      <created>1772207584834</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1772207584835</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +253,7 @@
     <MESSAGE value="fix: fix the eslint errors,not-found-page" />
     <MESSAGE value="feat: implement NgRX, dashboard-store" />
     <MESSAGE value="feat: implement editMode, addTab dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement editMode, addTab dialog" />
+    <MESSAGE value="feat: implement interactions with tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement interactions with tab" />
   </component>
 </project>

@@ -118,4 +118,70 @@ export const dashboardReducer = createReducer(
       },
     };
   }),
+
+  on(dashboardActions.addCard, (state, { tabId, layout, title }) => {
+    if (!state.selectedDashboard) return state;
+
+    const newCard = {
+      id: Date.now().toString(),
+      title: title ?? '',
+      layout,
+      items: [],
+    };
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: state.selectedDashboard.tabs.map((tab) =>
+          tab.id === tabId ? { ...tab, cards: [...tab.cards, newCard] } : tab,
+        ),
+      },
+    };
+  }),
+
+  on(dashboardActions.editCardContent, (state, { tabId, cardId, title, items }) => {
+    if (!state.selectedDashboard) return state;
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: state.selectedDashboard.tabs.map((tab) =>
+          tab.id === tabId
+            ? {
+                ...tab,
+                cards: tab.cards.map((card) =>
+                  card.id === cardId ? { ...card, title, items } : card,
+                ),
+              }
+            : tab,
+        ),
+      },
+    };
+  }),
+
+  on(dashboardActions.reorderCard, (state, { tabId, cardId, newIdx }) => {
+    if (!state.selectedDashboard) return state;
+
+    return {
+      ...state,
+      selectedDashboard: {
+        ...state.selectedDashboard,
+        tabs: state.selectedDashboard.tabs.map((tab) => {
+          if (tab.id !== tabId) return tab;
+
+          const cardIdx = tab.cards.findIndex((card) => card.id === cardId);
+
+          if (newIdx < 0 || newIdx >= tab.cards.length) return tab;
+
+          const updatedCards = [...tab.cards];
+
+          const [moved] = updatedCards.splice(cardIdx, 1);
+          updatedCards.splice(newIdx, 0, moved);
+          return { ...tab, cards: updatedCards };
+        }),
+      },
+    };
+  }),
 );
