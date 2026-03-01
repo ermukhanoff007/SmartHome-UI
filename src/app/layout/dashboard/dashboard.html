@@ -4,23 +4,34 @@
   </div>
 }
 <div class="tabs-container">
-  <app-tabs
-    [tabs]="(dashboard$ | async)?.tabs ?? []"
-    [editMode]="editMode()"
-    (OnChangeTab)="onChangeTab($event)"
-    (tabMove)="moveTab($event)"
-    (removeTab)="removeTab($event)"
-    (renameTab)="renameTab($event)"
-  >
-  </app-tabs>
+  <div class="tabs-items">
+    <app-tabs
+      [tabs]="(dashboard$ | async)?.tabs ?? []"
+      [editMode]="editMode()"
+      (OnChangeTab)="onChangeTab($event)"
+      (tabMove)="moveTab($event)"
+      (removeTab)="removeTab($event)"
+      (renameTab)="renameTab($event)"
+    >
+    </app-tabs>
+    @if (editMode()) {
+      <button class="addTabBtn" (click)="openAddTabDialog()">+</button>
+    }
+  </div>
 
   @if (!editMode()) {
-    <button class="editBtn" (click)="enterEdit()">
-      <mat-icon>edit</mat-icon>
-    </button>
+    <div style="display: flex; margin-left: auto">
+      <button class="edit-btn" (click)="enterEdit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      @if (dashboard$ | async; as dashboard) {
+        <button (click)="deleteDashboard(dashboard.id)" class="delete-btn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      }
+    </div>
   }
   @if (editMode()) {
-    <button class="addTabBtn" (click)="openAddTabDialog()">+</button>
     <div class="actions-container">
       <button class="actions-save" (click)="save()">Save</button>
       <button class="actions-discard" (click)="discard()">Discard</button>

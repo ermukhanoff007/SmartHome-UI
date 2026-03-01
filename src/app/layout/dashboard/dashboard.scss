@@ -4,14 +4,28 @@
   background-color: gray;
   align-items: center;
 }
-.editBtn {
-  margin-left: auto;
+
+@media screen and (max-width: 1040px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+}
+.edit-btn {
   margin-right: 20px;
   background: none;
   border: none;
   transition: all 0.3s ease;
 }
-.editBtn:hover {
+.delete-btn {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+.edit-btn:hover {
+  color: white;
+}
+.delete-btn:hover {
   color: white;
 }
 
@@ -30,6 +44,10 @@
   margin-top: 10px;
   margin-bottom: 10px;
   transition: all 0.3s ease;
+}
+
+.tabs-items {
+  display: flex;
 }
 
 .actions-discard {

@@ -123,7 +123,6 @@ export class Dashboard implements OnInit {
           }),
         );
       }
-      console.log(res);
     });
   }
 
@@ -135,5 +134,14 @@ export class Dashboard implements OnInit {
         newIdx: event.newIdx,
       }),
     );
+  }
+
+  deleteDashboard(dashboardId: string) {
+    if (!dashboardId) {
+      console.log('dashboardId is undefined');
+      return;
+    }
+    this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId }));
+    console.log('click');
   }
 }

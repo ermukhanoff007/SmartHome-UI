@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement toggleDevice">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement add-dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772363048232</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: implement add-dashboard">
+      <option name="closed" value="true" />
+      <created>1772368143551</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1772368143551</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +290,7 @@
     <MESSAGE value="feat: implement addCard" />
     <MESSAGE value="feat: implement editCard" />
     <MESSAGE value="feat: implement toggleDevice" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement toggleDevice" />
+    <MESSAGE value="feat: implement add-dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement add-dashboard" />
   </component>
 </project>

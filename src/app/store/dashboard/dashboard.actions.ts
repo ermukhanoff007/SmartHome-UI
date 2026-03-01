@@ -34,6 +34,20 @@ export const createDashboardFailure = createAction(
   props<{ error: string }>(),
 );
 
+export const deleteDashboard = createAction(
+  '[Dashboard] Delete Dashboard',
+  props<{ dashboardId: string }>(),
+);
+export const deleteDashboardSuccess = createAction(
+  '[Dashboard API] Delete Dashboard Success',
+  props<{ dashboardId: string }>(),
+);
+
+export const deleteDashboardFailure = createAction(
+  '[Dashboard API] Delete Dashboard Failure',
+  props<{ error: string }>(),
+);
+
 export const selectTab = createAction('[Dashboard] Select Tab', props<{ tabId: string }>());
 
 export const enterEditMode = createAction('[Dashboard] Enter Edit mode]');

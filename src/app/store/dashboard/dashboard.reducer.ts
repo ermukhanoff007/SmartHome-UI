@@ -29,6 +29,25 @@ export const dashboardReducer = createReducer(
     selectedDashboard: dashboard,
   })),
 
+  on(dashboardActions.deleteDashboard, (state) => ({
+    ...state,
+    loading: true,
+    error: null,
+  })),
+
+  on(dashboardActions.deleteDashboardSuccess, (state, { dashboardId }) => ({
+    ...state,
+    loading: false,
+    selectedDashboard: state.selectedDashboard?.id === dashboardId ? null : state.selectedDashboard,
+    selectedTabId: state.selectedDashboard?.id === dashboardId ? null : state.selectedTabId,
+  })),
+
+  on(dashboardActions.deleteDashboardFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  })),
+
   on(dashboardActions.selectTab, (state, { tabId }) => ({
     ...state,
     selectedTabId: tabId,

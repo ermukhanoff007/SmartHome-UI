@@ -68,7 +68,6 @@ export class EditCardModal implements OnInit {
       title: this.form.value.title,
       items: this.items(),
     });
-    console.log('edit');
   }
   close(): void {
     this.dialogRef.close();

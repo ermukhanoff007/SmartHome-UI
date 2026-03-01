@@ -63,4 +63,16 @@ export class DashboardEffects {
       ),
     ),
   );
+
+  deleteDashboard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(DashboardActions.deleteDashboard),
+      switchMap(({ dashboardId }) =>
+        this.api.deleteDashboard(dashboardId).pipe(
+          map(() => DashboardActions.deleteDashboardSuccess({ dashboardId })),
+          catchError(() => of(DashboardActions.deleteDashboardFailure({ error: 'Delete failed' }))),
+        ),
+      ),
+    ),
+  );
 }
