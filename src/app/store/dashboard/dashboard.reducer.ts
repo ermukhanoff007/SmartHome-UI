@@ -184,4 +184,58 @@ export const dashboardReducer = createReducer(
       },
     };
   }),
+
+  on(dashboardActions.toggleDevice, (state, { deviceId, newState }) => {
+    if (!state.selectedDashboard) return state;
+
+    const updatedDasbboard = {
+      ...state.selectedDashboard,
+      tabs: state.selectedDashboard.tabs.map((tab) => ({
+        ...tab,
+        cards: tab.cards.map((card) => ({
+          ...card,
+          items: card.items.map((item) =>
+            item.type === 'device' && item.id === deviceId ? { ...item, state: newState } : item,
+          ),
+        })),
+      })),
+    };
+    return { ...state, selectedDashboard: updatedDasbboard };
+  }),
+
+  on(dashboardActions.toggleDeviceSuccess, (state, { device }) => {
+    if (!state.selectedDashboard) return state;
+
+    const updatedDasbboard = {
+      ...state.selectedDashboard,
+      tabs: state.selectedDashboard.tabs.map((tab) => ({
+        ...tab,
+        cards: tab.cards.map((card) => ({
+          ...card,
+          items: card.items.map((item) =>
+            item.type === 'device' && item.id === device.id ? { ...device } : item,
+          ),
+        })),
+      })),
+    };
+    return { ...state, selectedDashboard: updatedDasbboard };
+  }),
+
+  on(dashboardActions.toggleDeviceFailure, (state, { deviceId, prevState }) => {
+    if (!state.selectedDashboard) return state;
+
+    const updatedDasbboard = {
+      ...state.selectedDashboard,
+      tabs: state.selectedDashboard.tabs.map((tab) => ({
+        ...tab,
+        cards: tab.cards.map((card) => ({
+          ...card,
+          items: card.items.map((item) =>
+            item.id === deviceId && item.type === 'device' ? { ...item, state: prevState } : item,
+          ),
+        })),
+      })),
+    };
+    return { ...state, selectedDashboard: updatedDasbboard };
+  }),
 );

@@ -35,10 +35,14 @@
         [cards]="dash.cards"
         (edit)="onEditCard($event)"
         [tabId]="dash.id"
+        [editMode]="editMode()"
+        (moveCard)="moveCard($event)"
       ></app-card-list>
     </div>
-    <div class="add-card-container">
-      <button class="add-card-btn" mat-raised-button (click)="addCard(dash.id)">Add Card</button>
-    </div>
+    @if (editMode()) {
+      <div class="add-card-container">
+        <button class="add-card-btn" mat-raised-button (click)="addCard(dash.id)">Add Card</button>
+      </div>
+    }
   </div>
 }

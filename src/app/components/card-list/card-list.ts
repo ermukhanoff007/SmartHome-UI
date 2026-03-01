@@ -12,9 +12,17 @@ import { CardItem } from '../card-item/card-item';
 export class CardList {
   public cards = input.required<Card[]>();
   tabId = input.required<string>();
+  editMode = input.required<boolean>();
+
+  moveCard = output<{ tabId: string; cardId: string; newIdx: number }>();
+
   edit = output<{ tabId: string; card: Card }>();
 
   onEdit(event: { tabId: string; card: Card }) {
     this.edit.emit(event);
+  }
+
+  onMove(event: { tabId: string; cardId: string; newIdx: number }) {
+    this.moveCard.emit(event);
   }
 }

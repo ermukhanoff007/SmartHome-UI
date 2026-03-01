@@ -109,7 +109,9 @@ export class Dashboard implements OnInit {
   }
 
   onEditCard(event: { tabId: string; card: Card }) {
-    const dialogRef = this.dialog.open(EditCardModal);
+    const dialogRef = this.dialog.open(EditCardModal, {
+      data: event.card,
+    });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
         this.store.dispatch(
@@ -123,5 +125,15 @@ export class Dashboard implements OnInit {
       }
       console.log(res);
     });
+  }
+
+  moveCard(event: { tabId: string; cardId: string; newIdx: number }) {
+    this.store.dispatch(
+      DashboardActions.reorderCard({
+        tabId: event.tabId,
+        cardId: event.cardId,
+        newIdx: event.newIdx,
+      }),
+    );
   }
 }

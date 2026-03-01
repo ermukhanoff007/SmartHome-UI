@@ -6,7 +6,8 @@ import { MatIcon } from '@angular/material/icon';
 import { MatOption, MatSelect } from '@angular/material/select';
 import { ApiService } from '../../../services/api.service';
 import { MatDialogRef } from '@angular/material/dialog';
-import { CardItem } from '../../../models/card.model';
+import { Card, CardItem } from '../../../models/card.model';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-card-modal',
@@ -28,6 +29,7 @@ export class EditCardModal implements OnInit {
   private fb = inject(FormBuilder);
   private service = inject(ApiService);
   private dialogRef = inject(MatDialogRef<EditCardModal>);
+  private data = inject<Card>(MAT_DIALOG_DATA);
 
   allEntites = signal<CardItem[]>([]);
   items = signal<CardItem[]>([]);
@@ -38,6 +40,12 @@ export class EditCardModal implements OnInit {
   });
 
   ngOnInit(): void {
+    this.form.patchValue({
+      title: this.data.title,
+    });
+
+    this.items.set([...this.data.items]);
+
     this.service.getDevices().subscribe((devices) => {
       this.allEntites.set(devices);
     });

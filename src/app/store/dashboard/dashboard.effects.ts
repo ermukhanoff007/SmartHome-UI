@@ -37,4 +37,18 @@ export class DashboardEffects {
       }),
     ),
   );
+
+  toggleDevice$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(DashboardActions.toggleDevice),
+      switchMap(({ deviceId, newState }) =>
+        this.api.patchDevice(deviceId, newState).pipe(
+          map((device) => DashboardActions.toggleDeviceSuccess({ device })),
+          catchError(() =>
+            of(DashboardActions.toggleDeviceFailure({ deviceId, prevState: !newState })),
+          ),
+        ),
+      ),
+    ),
+  );
 }

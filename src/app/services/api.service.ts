@@ -40,6 +40,6 @@ export class ApiService {
   }
 
   patchDevice(id: string, state: boolean) {
-    return this.http.patch<Device | Sensor>(`${this.base}/devices/${id}`, { state });
+    return this.http.patch<Device>(`${this.base}/devices/${id}`, { state });
   }
 }

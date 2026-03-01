@@ -51,3 +51,18 @@ export const reorderCard = createAction(
   '[Dashboard] Reorder Card',
   props<{ tabId: string; cardId: string; newIdx: number }>(),
 );
+
+export const toggleDevice = createAction(
+  '[Dashboard] Toggle Device',
+  props<{ deviceId: string; newState: boolean }>(),
+);
+
+export const toggleDeviceSuccess = createAction(
+  '[Dashboard] Toggle Device Success',
+  props<{ device: Device }>(),
+);
+
+export const toggleDeviceFailure = createAction(
+  '[Dashboard] Toggle Device Failure',
+  props<{ deviceId: string; prevState: boolean }>(),
+);

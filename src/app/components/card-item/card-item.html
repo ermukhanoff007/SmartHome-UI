@@ -17,8 +17,16 @@
         }
       }
     </div>
-    <div>
-      <button (click)="onEdit()">:</button>
-    </div>
+    @if (editModeActive()) {
+      <div class="edit-btns-container">
+        @if (index() !== 0) {
+          <button (click)="moveLeft()"><mat-icon>arrow_left</mat-icon></button>
+        }
+        @if (index() !== total() - 1) {
+          <button (click)="moveRight()"><mat-icon>arrow_right</mat-icon></button>
+        }
+        <button (click)="onEdit()">:</button>
+      </div>
+    }
   </div>
 </div>

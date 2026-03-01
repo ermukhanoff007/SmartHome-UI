@@ -4,28 +4,42 @@
     <input matInput placeholder="Card Title" formControlName="title" />
   </mat-form-field>
 
-  <div>
+  <div class="current-items-container">
     <h3>Current Entities</h3>
-    @for (item of items(); track item.id; let i = $index) {
-      <div>
-        <span>{{ item.label }}</span>
-        <button mat-icon-button (click)="removeEntity(i)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    }
+    <div class="current-items-block">
+      @for (item of items(); track item.id; let i = $index) {
+        <div class="current-items">
+          <span>{{ item.label }}</span>
+          <button mat-icon-button (click)="removeEntity(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      }
+    </div>
   </div>
 
-  <mat-form-field>
-    <mat-label> Select Entity </mat-label>
-    <mat-select formControlName="selectedEntity">
-      @for (entity of allEntites(); track entity.id) {
-        <mat-option [value]="entity"> {{ entity.label }} {{ entity.type }} </mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
+  <div class="add-entity-container">
+    <mat-form-field>
+      <mat-label> Select Entity </mat-label>
+      <mat-select formControlName="selectedEntity">
+        @for (entity of allEntites(); track entity.id) {
+          <mat-option [value]="entity"> {{ entity.label }} {{ entity.type }} </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      style="padding: 10px; margin-left: 8px; background-color: deepskyblue; color: white"
+      (click)="addEntity()"
+    >
+      Add
+    </button>
+  </div>
 
-  <button mat-raised-button color="primary" (click)="addEntity()">Add</button>
-  <button mat-raised-button color="accent" type="button" (click)="submit()">Save</button>
-  <button mat-raised-button (click)="close()">Cancel</button>
+  <div class="edit-card-btns">
+    <button mat-raised-button (click)="close()">Cancel</button>
+    <button mat-raised-button style="background-color: green; color: wheat" (click)="submit()">
+      Save
+    </button>
+  </div>
 </form>
