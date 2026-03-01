@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement editCard">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement toggleDevice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772292105659</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: implement toggleDevice">
+      <option name="closed" value="true" />
+      <created>1772363048232</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1772363048232</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +282,7 @@
     <MESSAGE value="feat: implement interactions with tab" />
     <MESSAGE value="feat: implement addCard" />
     <MESSAGE value="feat: implement editCard" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement editCard" />
+    <MESSAGE value="feat: implement toggleDevice" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement toggleDevice" />
   </component>
 </project>

@@ -6,10 +6,8 @@ export const selectSelectedDashboard = createSelector(
   selectDashboardState,
   (dashboardState) => dashboardState.selectedDashboard,
 );
-export const selectSelectedTab = createSelector(selectDashboardState, (dashboardState) => {
-  if (!dashboardState.selectedTabId || !dashboardState.selectedTabId) return null;
-  return (
-    dashboardState.selectedDashboard?.tabs.find((t) => t.id === dashboardState.selectedTabId) ??
-    dashboardState.selectedDashboard?.tabs[0]
-  );
+export const selectSelectedTab = createSelector(selectDashboardState, (state) => {
+  if (!state.selectedDashboard) return null;
+
+  return state.selectedDashboard.tabs?.find((tab) => tab.id === state.selectedTabId) ?? null;
 });

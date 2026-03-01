@@ -14,7 +14,7 @@ export const dashboardReducer = createReducer(
   on(dashboardActions.loadDashboardSuccess, (state, { dashboard }) => ({
     ...state,
     selectedDashboard: dashboard,
-    selectedTabId: dashboard.tabs[0].id ?? null,
+    selectedTabId: dashboard.tabs?.length ? dashboard.tabs[0].id : null,
     loading: false,
   })),
 
@@ -22,6 +22,11 @@ export const dashboardReducer = createReducer(
     ...state,
     error: error,
     loading: false,
+  })),
+
+  on(dashboardActions.createDashboardSuccess, (state, { dashboard }) => ({
+    ...state,
+    selectedDashboard: dashboard,
   })),
 
   on(dashboardActions.selectTab, (state, { tabId }) => ({

@@ -51,4 +51,16 @@ export class DashboardEffects {
       ),
     ),
   );
+
+  createDashboard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(DashboardActions.createDashboard),
+      switchMap(({ dashboard }) =>
+        this.api.createDashboard(dashboard).pipe(
+          map((dashboard) => DashboardActions.createDashboardSuccess({ dashboard })),
+          catchError((error) => of(DashboardActions.createDashboardFailure({ error }))),
+        ),
+      ),
+    ),
+  );
 }

@@ -19,6 +19,21 @@ export const loadDashboardFailure = createAction(
   props<{ error: string }>(),
 );
 
+export const createDashboard = createAction(
+  '[Dashboard] Create Dashboard',
+  props<{ dashboard: IDashboards }>(),
+);
+
+export const createDashboardSuccess = createAction(
+  '[Dashboard] Create DashboardSuccess',
+  props<{ dashboard: IDashboards }>(),
+);
+
+export const createDashboardFailure = createAction(
+  '[Dashboard] Create Dashboard Failure',
+  props<{ error: string }>(),
+);
+
 export const selectTab = createAction('[Dashboard] Select Tab', props<{ tabId: string }>());
 
 export const enterEditMode = createAction('[Dashboard] Enter Edit mode]');

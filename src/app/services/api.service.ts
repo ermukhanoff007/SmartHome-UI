@@ -32,6 +32,10 @@ export class ApiService {
     return this.http.put<IDashboards>(`${this.base}/dashboards/${id}`, data);
   }
 
+  createDashboard(dashboard: IDashboards) {
+    return this.http.post<IDashboards>(`${this.base}/dashboards`, dashboard);
+  }
+
   deleteDashboard(id: string) {
     return this.http.delete(`${this.base}/dashboards/${id}`);
   }
