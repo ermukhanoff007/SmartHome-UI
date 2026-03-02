@@ -28,7 +28,7 @@ export class DashboardEffects {
     this.actions$.pipe(
       ofType(DashboardActions.saveChanges),
       withLatestFrom(this.store.select(selectSelectedDashboard)),
-      switchMap(([_, dashboard]) => {
+      switchMap(([, dashboard]) => {
         if (!dashboard) return EMPTY;
         return this.api.updateDashboard(dashboard.id, dashboard).pipe(
           map(() => DashboardActions.exitEditMode()),
