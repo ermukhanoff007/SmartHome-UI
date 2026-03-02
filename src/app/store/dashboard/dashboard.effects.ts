@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ApiService } from '../../services/api.service';
 import * as DashboardActions from './dashboard.actions';
-import { catchError, EMPTY, map, of, switchMap, withLatestFrom } from 'rxjs';
+import { catchError, EMPTY, map, mergeMap, of, switchMap, withLatestFrom } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectSelectedDashboard } from './dashboard.selector';
 
@@ -71,6 +71,18 @@ export class DashboardEffects {
         this.api.deleteDashboard(dashboardId).pipe(
           map(() => DashboardActions.deleteDashboardSuccess({ dashboardId })),
           catchError(() => of(DashboardActions.deleteDashboardFailure({ error: 'Delete failed' }))),
+        ),
+      ),
+    ),
+  );
+
+  loadDashboards$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(DashboardActions.loadDashboards),
+      mergeMap(() =>
+        this.api.getDashboards().pipe(
+          map((dashboards) => DashboardActions.loadDashboardsSuccess({ dashboards })),
+          catchError((error) => of(DashboardActions.loadDashboardsFailure({ error }))),
         ),
       ),
     ),

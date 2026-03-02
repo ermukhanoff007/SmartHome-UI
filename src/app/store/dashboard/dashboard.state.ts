@@ -1,6 +1,7 @@
 import { IDashboards } from '../../models/dashboard';
 
 export interface DashboardState {
+  dashboards: IDashboards[];
   selectedDashboard: IDashboards | null;
   selectedTabId: string | null;
   snapshot: IDashboards | null;
@@ -9,6 +10,7 @@ export interface DashboardState {
 }
 
 export const initialState: DashboardState = {
+  dashboards: [],
   selectedDashboard: null,
   selectedTabId: null,
   snapshot: null,

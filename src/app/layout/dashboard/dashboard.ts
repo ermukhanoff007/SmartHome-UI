@@ -19,6 +19,7 @@ import { addCard, editCardContent } from '../../store/dashboard/dashboard.action
 import { MatButton } from '@angular/material/button';
 import { Card } from '../../models/card.model';
 import { EditCardModal } from '../../feature/modals/edit-card-modal/edit-card-modal';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -136,12 +137,12 @@ export class Dashboard implements OnInit {
     );
   }
 
-  deleteDashboard(dashboardId: string) {
-    if (!dashboardId) {
-      console.log('dashboardId is undefined');
-      return;
-    }
-    this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId }));
-    console.log('click');
+  deleteDashboard() {
+    this.dashboard$.pipe(take(1)).subscribe((dashboard) => {
+      if (!dashboard) {
+        return;
+      }
+      this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId: dashboard.id }));
+    });
   }
 }

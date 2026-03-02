@@ -15,9 +15,9 @@ export class AddDashboardModal {
   private dialogRef = inject(MatDialogRef<AddDashboardModal>);
 
   form = this.fb.group({
-    id: ['', Validators.required, Validators.maxLength(30)],
-    title: ['', Validators.required, Validators.maxLength(50)],
-    icon: ['', Validators.required],
+    id: ['', [Validators.required, Validators.maxLength(30)]],
+    title: ['', [Validators.required, Validators.maxLength(50)]],
+    icon: ['', [Validators.required]],
   });
 
   save() {

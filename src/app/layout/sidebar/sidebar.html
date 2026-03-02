@@ -19,7 +19,7 @@
 
         <div>
           <mat-nav-list>
-            @for (dash of dashboardService.dashboards$ | async; track dash.id) {
+            @for (dash of dashboards$ | async; track dash.id) {
               <mat-list-item
                 class="sidebar-navi"
                 [routerLink]="['/dashboard', dash.id]"

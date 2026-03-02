@@ -4,6 +4,18 @@ import { CardLayout } from '../../models/card.model';
 import { Device } from '../../models/device';
 import { Sensor } from '../../models/sensor';
 
+export const loadDashboards = createAction('[Dashboard API] Load Dashboards');
+
+export const loadDashboardsSuccess = createAction(
+  '[Dashboard API] Load Dashboards Success',
+  props<{ dashboards: IDashboards[] }>(),
+);
+
+export const loadDashboardsFailure = createAction(
+  '[Dashboard API] Load Dashboards Failure',
+  props<{ error: string }>(),
+);
+
 export const loadDashboard = createAction(
   '[Dashboard] Load Dashboard',
   props<{ dashboardId: string }>(),

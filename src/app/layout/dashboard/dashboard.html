@@ -25,9 +25,11 @@
         <mat-icon>edit</mat-icon>
       </button>
       @if (dashboard$ | async; as dashboard) {
-        <button (click)="deleteDashboard(dashboard.id)" class="delete-btn">
-          <mat-icon>delete</mat-icon>
-        </button>
+        @if (dashboard.id) {
+          <button (click)="deleteDashboard()" class="delete-btn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        }
       }
     </div>
   }

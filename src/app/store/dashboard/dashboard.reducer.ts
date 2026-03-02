@@ -5,6 +5,25 @@ import { toKebab } from '../../utils/to-kebab.function';
 
 export const dashboardReducer = createReducer(
   initialState,
+
+  on(dashboardActions.loadDashboards, (state) => ({
+    ...state,
+    loading: true,
+    error: null,
+  })),
+
+  on(dashboardActions.loadDashboardsSuccess, (state, { dashboards }) => ({
+    ...state,
+    dashboards,
+    loading: false,
+  })),
+
+  on(dashboardActions.loadDashboardsFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  })),
+
   on(dashboardActions.loadDashboard, (state) => ({
     ...state,
     loading: true,
@@ -26,6 +45,7 @@ export const dashboardReducer = createReducer(
 
   on(dashboardActions.createDashboardSuccess, (state, { dashboard }) => ({
     ...state,
+    dashboards: [...state.dashboards, dashboard],
     selectedDashboard: dashboard,
   })),
 
