@@ -4,15 +4,15 @@ import { CardLayout } from '../../models/card.model';
 import { Device } from '../../models/device';
 import { Sensor } from '../../models/sensor';
 
-export const loadDashboards = createAction('[Dashboard API] Load Dashboards');
+export const loadDashboards = createAction('[Dashboard] Load Dashboards');
 
 export const loadDashboardsSuccess = createAction(
-  '[Dashboard API] Load Dashboards Success',
+  '[Dashboard] Load Dashboards Success',
   props<{ dashboards: IDashboards[] }>(),
 );
 
 export const loadDashboardsFailure = createAction(
-  '[Dashboard API] Load Dashboards Failure',
+  '[Dashboard] Load Dashboards Failure',
   props<{ error: string }>(),
 );
 
@@ -51,12 +51,12 @@ export const deleteDashboard = createAction(
   props<{ dashboardId: string }>(),
 );
 export const deleteDashboardSuccess = createAction(
-  '[Dashboard API] Delete Dashboard Success',
+  '[Dashboard] Delete Dashboard Success',
   props<{ dashboardId: string }>(),
 );
 
 export const deleteDashboardFailure = createAction(
-  '[Dashboard API] Delete Dashboard Failure',
+  '[Dashboard] Delete Dashboard Failure',
   props<{ error: string }>(),
 );
 

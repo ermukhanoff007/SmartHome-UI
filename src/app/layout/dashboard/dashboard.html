@@ -24,13 +24,10 @@
       <button class="edit-btn" (click)="enterEdit()">
         <mat-icon>edit</mat-icon>
       </button>
-      @if (dashboard$ | async; as dashboard) {
-        @if (dashboard.id) {
-          <button (click)="deleteDashboard()" class="delete-btn">
-            <mat-icon>delete</mat-icon>
-          </button>
-        }
-      }
+
+      <button (click)="deleteDashboard()" class="delete-btn">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
   }
   @if (editMode()) {
