@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="fix: fix errors with dashboard">
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="fix: fix the delete button ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.effects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "#3 on develop",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on develop&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/macbook/WebstormProjects/SmartHome-UI/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -91,7 +94,8 @@
       <workItem from="1771184524634" duration="27011000" />
       <workItem from="1771512627090" duration="29000" />
       <workItem from="1771860239181" duration="9365000" />
-      <workItem from="1772457908250" duration="6245000" />
+      <workItem from="1772457908250" duration="7698000" />
+      <workItem from="1772723687990" duration="10074000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -269,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772471028616</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix: fix the delete button ui">
+      <option name="closed" value="true" />
+      <created>1772473795589</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1772473795589</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +326,7 @@
     <MESSAGE value="feat: implement delete-dashboard, but with issues" />
     <MESSAGE value="fix: fix linting errors and login page ui" />
     <MESSAGE value="fix: fix errors with dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix errors with dashboard" />
+    <MESSAGE value="fix: fix the delete button ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix the delete button ui" />
   </component>
 </project>

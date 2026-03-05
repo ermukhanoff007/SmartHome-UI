@@ -57,6 +57,7 @@ export const dashboardReducer = createReducer(
 
   on(dashboardActions.deleteDashboardSuccess, (state, { dashboardId }) => ({
     ...state,
+    dashboards: state.dashboards.filter((d) => d.id !== dashboardId),
     loading: false,
     selectedDashboard: state.selectedDashboard?.id === dashboardId ? null : state.selectedDashboard,
     selectedTabId: state.selectedDashboard?.id === dashboardId ? null : state.selectedTabId,
@@ -87,6 +88,26 @@ export const dashboardReducer = createReducer(
     ...state,
     snapshot: null,
     selectedDashboard: state.snapshot,
+  })),
+
+  on(dashboardActions.saveChanges, (state) => ({
+    ...state,
+    loading: true,
+    error: null,
+  })),
+
+  on(dashboardActions.saveChangesSuccess, (state, { dashboard }) => ({
+    ...state,
+    loading: false,
+    selectedDashboard: dashboard,
+    dashboards: state.dashboards.map((d) => (d.id === dashboard.id ? dashboard : d)),
+    snapshot: null,
+  })),
+
+  on(dashboardActions.saveChangesFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
   })),
 
   on(dashboardActions.addTab, (state, { title }) => {

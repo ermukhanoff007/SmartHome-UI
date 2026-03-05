@@ -17,7 +17,9 @@ export class DashboardEffects {
       ofType(DashboardActions.loadDashboard),
       switchMap(({ dashboardId }) =>
         this.api.getDashboard(dashboardId).pipe(
-          map((dashboard) => DashboardActions.loadDashboardSuccess({ dashboard })),
+          map((dashboard) => {
+            return DashboardActions.loadDashboardSuccess({ dashboard });
+          }),
           catchError((error) => of(DashboardActions.loadDashboardFailure({ error }))),
         ),
       ),
@@ -28,11 +30,14 @@ export class DashboardEffects {
     this.actions$.pipe(
       ofType(DashboardActions.saveChanges),
       withLatestFrom(this.store.select(selectSelectedDashboard)),
-      switchMap(([, dashboard]) => {
+      switchMap(([action, dashboard]) => {
         if (!dashboard) return EMPTY;
-        return this.api.updateDashboard(dashboard.id, dashboard).pipe(
-          map(() => DashboardActions.exitEditMode()),
-          catchError((error) => of(DashboardActions.loadDashboardFailure({ error }))),
+        const id = action.dashboardId;
+        return this.api.updateDashboard(id, dashboard).pipe(
+          map((updatedDashboard) =>
+            DashboardActions.saveChangesSuccess({ dashboard: updatedDashboard }),
+          ),
+          catchError((error) => of(DashboardActions.saveChangesFailure({ error: error.message }))),
         );
       }),
     ),

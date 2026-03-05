@@ -19,7 +19,7 @@ import { addCard, editCardContent } from '../../store/dashboard/dashboard.action
 import { MatButton } from '@angular/material/button';
 import { Card } from '../../models/card.model';
 import { EditCardModal } from '../../feature/modals/edit-card-modal/edit-card-modal';
-import { take } from 'rxjs';
+// import { take } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -63,7 +63,8 @@ export class Dashboard implements OnInit {
   }
 
   save() {
-    this.store.dispatch(DashboardActions.saveChanges());
+    const dashboardId = this.route.snapshot.params['dashboardId'];
+    this.store.dispatch(DashboardActions.saveChanges({ dashboardId: dashboardId }));
     this.editMode.set(false);
   }
 
@@ -138,11 +139,7 @@ export class Dashboard implements OnInit {
   }
 
   deleteDashboard() {
-    this.dashboard$.pipe(take(1)).subscribe((dashboard) => {
-      if (!dashboard) {
-        return;
-      }
-      this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId: dashboard.id }));
-    });
+    const dashboardId = this.route.snapshot.params['dashboardId'];
+    this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId: dashboardId }));
   }
 }

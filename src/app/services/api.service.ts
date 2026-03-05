@@ -28,16 +28,16 @@ export class ApiService {
     return this.http.get<IDashboards>(`${this.base}/dashboards/${id}`);
   }
 
-  updateDashboard(id: string, data: IDashboards) {
-    return this.http.put<IDashboards>(`${this.base}/dashboards/${id}`, data);
+  updateDashboard(dashboardId: string, data: IDashboards) {
+    return this.http.put<IDashboards>(`${this.base}/dashboards/${dashboardId}`, data);
   }
 
   createDashboard(dashboard: IDashboards) {
     return this.http.post<IDashboards>(`${this.base}/dashboards`, dashboard);
   }
 
-  deleteDashboard(id: string) {
-    return this.http.delete(`${this.base}/dashboards/${id}`);
+  deleteDashboard(dashboardId: string) {
+    return this.http.delete(`${this.base}/dashboards/${dashboardId}`);
   }
   getDevices() {
     return this.http.get<Device[] | Sensor[]>(`${this.base}/devices`);

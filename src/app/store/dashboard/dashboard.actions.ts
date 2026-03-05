@@ -64,7 +64,19 @@ export const selectTab = createAction('[Dashboard] Select Tab', props<{ tabId: s
 
 export const enterEditMode = createAction('[Dashboard] Enter Edit mode]');
 export const exitEditMode = createAction('[Dashboard] Exit Edit Mode');
-export const saveChanges = createAction('[Dashboard] Save Changes');
+export const saveChanges = createAction(
+  '[Dashboard] Save Changes',
+  props<{ dashboardId: string }>(),
+);
+export const saveChangesSuccess = createAction(
+  '[Dashboard] Save Changes Success',
+  props<{ dashboard: IDashboards }>(),
+);
+
+export const saveChangesFailure = createAction(
+  '[Dashboard] Save Changes Failure',
+  props<{ error: string }>(),
+);
 export const discardChange = createAction('[Dashboard] Discard Change');
 
 export const addTab = createAction('[Dashboard] Add Tab', props<{ title: string }>());
