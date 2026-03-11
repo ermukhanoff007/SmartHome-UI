@@ -8,7 +8,7 @@
     <app-tabs
       [tabs]="(dashboard$ | async)?.tabs ?? []"
       [editMode]="editMode()"
-      (OnChangeTab)="onChangeTab($event)"
+      (changeTab)="onChangeTab($event)"
       (tabMove)="moveTab($event)"
       (removeTab)="removeTab($event)"
       (renameTab)="renameTab($event)"
@@ -48,6 +48,7 @@
         [editMode]="editMode()"
         (moveCard)="moveCard($event)"
         (toggleEvent)="toggleDevicesEvent($event)"
+        (updateStateEvent)="updateDeviceStateEvent($event)"
       ></app-card-list>
     </div>
     @if (editMode()) {

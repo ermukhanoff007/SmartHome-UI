@@ -16,12 +16,13 @@ import { MatIconButton } from '@angular/material/button';
 export class Tabs {
   tabs = input<Tab[]>([]);
   editMode = input<boolean>();
-  private dialog = inject(MatDialog);
+
   renameTab = output<{ tabId: string; newTitle: string }>();
   removeTab = output<string>();
   tabMove = output<{ tabId: string; direction: 'left' | 'right' }>();
+  changeTab = output<string>();
 
-  OnChangeTab = output<string>();
+  private dialog = inject(MatDialog);
 
   onTabRename(tabId: string, currentTitle: string) {
     const dialogRef = this.dialog.open(AddTabModal);
@@ -34,7 +35,7 @@ export class Tabs {
   onTabChange(index: number) {
     const tab = this.tabs()[index];
     if (tab) {
-      this.OnChangeTab.emit(tab.id);
+      this.changeTab.emit(tab.id);
     }
   }
 

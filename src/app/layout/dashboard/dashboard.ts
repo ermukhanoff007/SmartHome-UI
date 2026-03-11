@@ -37,7 +37,6 @@ export class Dashboard implements OnInit {
   private api = inject(ApiService);
 
   devices = signal<Sensor[] | Device[]>([]);
-
   editMode = signal(false);
 
   dashboard$ = this.store.select(selectSelectedDashboard);
@@ -154,6 +153,15 @@ export class Dashboard implements OnInit {
       DashboardActions.toggleDevice({
         deviceId: event.deviceId,
         newState: event.newState,
+      }),
+    );
+  }
+
+  updateDeviceStateEvent(event: { device: Device; state: boolean }) {
+    this.store.dispatch(
+      DashboardActions.toggleDevice({
+        deviceId: event.device.id,
+        newState: event.state,
       }),
     );
   }

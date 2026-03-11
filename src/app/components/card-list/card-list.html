@@ -9,6 +9,7 @@
       [total]="cards().length"
       (reorder)="onMove($event)"
       (toggleDevices)="onToggleEvent($event)"
+      (updateDevices)="onUpdateStateEvent($event)"
     >
     </app-card-item>
   }

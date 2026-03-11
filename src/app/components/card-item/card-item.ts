@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { Device } from '../../models/device';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
@@ -6,8 +6,7 @@ import { SensorComponent } from '../sensor/sensor';
 import { DeviceComponent } from '../device/device';
 import { ActiveHighlight } from '../../directives/active-highlight';
 import { MatIcon } from '@angular/material/icon';
-import { Store } from '@ngrx/store';
-import * as DashboardActions from '../../store/dashboard/dashboard.actions';
+
 @Component({
   selector: 'app-card-item',
   imports: [MatSlideToggle, SensorComponent, DeviceComponent, ActiveHighlight, MatIcon],
@@ -16,7 +15,6 @@ import * as DashboardActions from '../../store/dashboard/dashboard.actions';
 })
 export class CardItem {
   public card = input.required<Card>();
-  private store = inject(Store);
   tabId = input.required<string>();
   editModeActive = input.required<boolean>();
   index = input.required<number>();
@@ -25,6 +23,7 @@ export class CardItem {
   edit = output<{ tabId: string; card: Card }>();
   reorder = output<{ tabId: string; cardId: string; newIdx: number }>();
   toggleDevices = output<{ deviceId: string; newState: boolean }>();
+  updateDevices = output<{ device: Device; state: boolean }>();
 
   devices = computed<Device[]>(
     () => this.card()?.items.filter((i) => i.type === 'device') as Device[],
@@ -33,12 +32,6 @@ export class CardItem {
 
   groupState = computed(() => this.devices().some((d) => d.state));
 
-  toggleAll(value: boolean) {
-    this.devices().forEach((device) => {
-      this.store.dispatch(DashboardActions.toggleDevice({ deviceId: device.id, newState: value }));
-    });
-  }
-
   toggleAllDev(value: boolean) {
     this.devices().forEach((device) => {
       this.toggleDevices.emit({ deviceId: device.id, newState: value });
@@ -46,7 +39,7 @@ export class CardItem {
   }
 
   updateDevice(device: Device, state: boolean): void {
-    this.store.dispatch(DashboardActions.toggleDevice({ deviceId: device.id, newState: state }));
+    this.updateDevices.emit({ device: device, state: state });
   }
 
   onEdit() {

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="fix: fix the delete and seve errors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.html" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="fix: refactor some stupid and reusable components">
       <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/modals/edit-card-modal/edit-card-modal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/dashboard/dashboard.selector.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1771512627090" duration="29000" />
       <workItem from="1771860239181" duration="9365000" />
       <workItem from="1772457908250" duration="7698000" />
-      <workItem from="1772723687990" duration="30207000" />
+      <workItem from="1772723687990" duration="31039000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -294,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772737503576</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix: refactor some stupid and reusable components">
+      <option name="closed" value="true" />
+      <created>1773218237384</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1773218237384</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +344,7 @@
     <MESSAGE value="fix: fix errors with dashboard" />
     <MESSAGE value="fix: fix the delete button ui" />
     <MESSAGE value="fix: fix the delete and seve errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix the delete and seve errors" />
+    <MESSAGE value="fix: refactor some stupid and reusable components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: refactor some stupid and reusable components" />
   </component>
 </project>

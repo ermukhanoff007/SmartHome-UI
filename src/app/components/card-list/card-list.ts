@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { CardItem } from '../card-item/card-item';
+import { Device } from '../../models/device';
 
 @Component({
   selector: 'app-card-list',
@@ -17,6 +18,7 @@ export class CardList {
   moveCard = output<{ tabId: string; cardId: string; newIdx: number }>();
   edit = output<{ tabId: string; card: Card }>();
   toggleEvent = output<{ deviceId: string; newState: boolean }>();
+  updateStateEvent = output<{ device: Device; state: boolean }>();
 
   onEdit(event: { tabId: string; card: Card }) {
     this.edit.emit(event);
@@ -28,5 +30,9 @@ export class CardList {
 
   onToggleEvent(event: { deviceId: string; newState: boolean }) {
     this.toggleEvent.emit(event);
+  }
+
+  onUpdateStateEvent(event: { device: Device; state: boolean }) {
+    this.updateStateEvent.emit(event);
   }
 }
