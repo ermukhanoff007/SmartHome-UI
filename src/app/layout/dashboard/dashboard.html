@@ -47,6 +47,7 @@
         [tabId]="dash.id"
         [editMode]="editMode()"
         (moveCard)="moveCard($event)"
+        (toggleEvent)="toggleDevicesEvent($event)"
       ></app-card-list>
     </div>
     @if (editMode()) {

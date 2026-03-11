@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddDashboardModal } from '../../feature/modals/add-dashboard-modal/add-dashboard-modal';
 import * as DashboardActions from '../../store/dashboard/dashboard.actions';
 import { Store } from '@ngrx/store';
+import { selectAllDashboards } from '../../store/dashboard/dashboard.selector';
 
 @Component({
   selector: 'app-sidebar',
@@ -38,7 +39,7 @@ export class Sidebar implements OnInit {
   private router = inject(Router);
   authService = inject(AuthService);
   private dialog = inject(MatDialog);
-  dashboards$ = this.store.select((state) => state.dashboard.dashboards);
+  dashboards$ = this.store.select(selectAllDashboards);
 
   ngOnInit() {
     this.store.dispatch(DashboardActions.loadDashboards());

@@ -8,7 +8,6 @@ import { ActiveHighlight } from '../../directives/active-highlight';
 import { MatIcon } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import * as DashboardActions from '../../store/dashboard/dashboard.actions';
-
 @Component({
   selector: 'app-card-item',
   imports: [MatSlideToggle, SensorComponent, DeviceComponent, ActiveHighlight, MatIcon],
@@ -25,6 +24,7 @@ export class CardItem {
 
   edit = output<{ tabId: string; card: Card }>();
   reorder = output<{ tabId: string; cardId: string; newIdx: number }>();
+  toggleDevices = output<{ deviceId: string; newState: boolean }>();
 
   devices = computed<Device[]>(
     () => this.card()?.items.filter((i) => i.type === 'device') as Device[],
@@ -36,6 +36,12 @@ export class CardItem {
   toggleAll(value: boolean) {
     this.devices().forEach((device) => {
       this.store.dispatch(DashboardActions.toggleDevice({ deviceId: device.id, newState: value }));
+    });
+  }
+
+  toggleAllDev(value: boolean) {
+    this.devices().forEach((device) => {
+      this.toggleDevices.emit({ deviceId: device.id, newState: value });
     });
   }
 

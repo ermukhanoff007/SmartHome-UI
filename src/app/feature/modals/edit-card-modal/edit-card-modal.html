@@ -22,7 +22,7 @@
     <mat-form-field>
       <mat-label> Select Entity </mat-label>
       <mat-select formControlName="selectedEntity">
-        @for (entity of allEntites(); track entity.id) {
+        @for (entity of allEntities(); track entity.id) {
           <mat-option [value]="entity"> {{ entity.label }} {{ entity.type }} </mat-option>
         }
       </mat-select>

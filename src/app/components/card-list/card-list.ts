@@ -15,8 +15,8 @@ export class CardList {
   editMode = input.required<boolean>();
 
   moveCard = output<{ tabId: string; cardId: string; newIdx: number }>();
-
   edit = output<{ tabId: string; card: Card }>();
+  toggleEvent = output<{ deviceId: string; newState: boolean }>();
 
   onEdit(event: { tabId: string; card: Card }) {
     this.edit.emit(event);
@@ -24,5 +24,9 @@ export class CardList {
 
   onMove(event: { tabId: string; cardId: string; newIdx: number }) {
     this.moveCard.emit(event);
+  }
+
+  onToggleEvent(event: { deviceId: string; newState: boolean }) {
+    this.toggleEvent.emit(event);
   }
 }

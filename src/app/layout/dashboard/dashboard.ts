@@ -19,7 +19,9 @@ import { addCard, editCardContent } from '../../store/dashboard/dashboard.action
 import { MatButton } from '@angular/material/button';
 import { Card } from '../../models/card.model';
 import { EditCardModal } from '../../feature/modals/edit-card-modal/edit-card-modal';
-// import { take } from 'rxjs';
+import { ApiService } from '../../services/api.service';
+import { Sensor } from '../../models/sensor';
+import { Device } from '../../models/device';
 
 @Component({
   selector: 'app-dashboard',
@@ -32,6 +34,9 @@ export class Dashboard implements OnInit {
   private store = inject(Store);
   private route = inject(ActivatedRoute);
   private dialog = inject(MatDialog);
+  private api = inject(ApiService);
+
+  devices = signal<Sensor[] | Device[]>([]);
 
   editMode = signal(false);
 
@@ -50,6 +55,9 @@ export class Dashboard implements OnInit {
       if (tabId) {
         this.store.dispatch(DashboardActions.selectTab({ tabId }));
       }
+    });
+    this.api.getDevices().subscribe((devices) => {
+      this.devices.set(devices);
     });
   }
 
@@ -112,7 +120,10 @@ export class Dashboard implements OnInit {
 
   onEditCard(event: { tabId: string; card: Card }) {
     const dialogRef = this.dialog.open(EditCardModal, {
-      data: event.card,
+      data: {
+        card: event.card,
+        devices: this.devices(),
+      },
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
@@ -134,6 +145,15 @@ export class Dashboard implements OnInit {
         tabId: event.tabId,
         cardId: event.cardId,
         newIdx: event.newIdx,
+      }),
+    );
+  }
+
+  toggleDevicesEvent(event: { deviceId: string; newState: boolean }) {
+    this.store.dispatch(
+      DashboardActions.toggleDevice({
+        deviceId: event.deviceId,
+        newState: event.newState,
       }),
     );
   }
