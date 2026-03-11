@@ -1,0 +1,93 @@
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  align-items: center;
+}
+
+@media screen and (max-width: 1040px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+}
+.edit-btn {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+.delete-btn {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+.edit-btn:hover {
+  color: white;
+}
+.delete-btn:hover {
+  color: white;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+.actions-save {
+  background-color: forestgreen;
+  color: white;
+  margin-right: 20px;
+  border: solid 1px white;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.tabs-items {
+  display: flex;
+}
+
+.actions-discard {
+  background-color: red;
+  color: white;
+  margin-right: 20px;
+  border: solid 1px white;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.actions-save:hover {
+  background-color: darkgreen;
+}
+.actions-discard:hover {
+  background-color: darkred;
+}
+.addTabBtn {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  height: 90dvh;
+}
+.add-card-container {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.add-card-container {
+  margin-right: 30px;
+}

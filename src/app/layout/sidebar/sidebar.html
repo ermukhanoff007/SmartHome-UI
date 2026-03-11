@@ -6,36 +6,50 @@
     class="sidenav"
   >
     <div class="sidenav-content">
-      <div class="sidenav-header">
-        <mat-icon>home</mat-icon>
-        <span>Smart Home</span>
-        @if (isMobile()) {
-          <button class="sidebar-btn" mat-icon-button color="accent" (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        }
+      <div class="sidenav-item">
+        <div class="sidenav-header">
+          <mat-icon>home</mat-icon>
+          <span>Smart Home</span>
+          @if (isMobile()) {
+            <button class="sidebar-btn" mat-icon-button color="accent" (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          }
+        </div>
+
+        <div>
+          <mat-nav-list>
+            @for (dash of dashboards$ | async; track dash.id) {
+              <mat-list-item
+                class="sidebar-navi"
+                [routerLink]="['/dashboard', dash.id]"
+                routerLinkActive="active"
+              >
+                <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon>
+                {{ dash.title }}
+              </mat-list-item>
+            }
+          </mat-nav-list>
+        </div>
       </div>
-
-      <mat-nav-list>
-        @for (dash of dashboardService.dashboards$ | async; track dash.id) {
-          <mat-list-item
-            class="sidebar-navi"
-            [routerLink]="['/dashboard', dash.id]"
-            routerLinkActive="active"
-          >
-            <mat-icon matListItemIcon>{{ dash.icon }}</mat-icon>
-            {{ dash.title }}
-          </mat-list-item>
-        }
-      </mat-nav-list>
-
       <div class="sidebar-footer">
-        <mat-icon>account_circle</mat-icon>
-        @if (authService.user$ | async; as user) {
-          <span>{{ user.fullName }}</span>
-          <span>{{ user.initials }}</span>
-        }
-        <button class="sidebar-logout" (click)="authService.logout()">Log Out</button>
+        <div class="add-dash-btn">
+          <button
+            style="width: 100%; background-color: gainsboro"
+            mat-raised-button
+            (click)="addDashboard()"
+          >
+            Add Dashboard
+          </button>
+        </div>
+        <div class="side-bar-footer-items">
+          <mat-icon>account_circle</mat-icon>
+          @if (authService.user$ | async; as user) {
+            <span>{{ user.fullName }}</span>
+            <span>{{ user.initials }}</span>
+          }
+          <button class="sidebar-logout" (click)="authService.logout()">Log Out</button>
+        </div>
       </div>
     </div>
   </mat-sidenav>

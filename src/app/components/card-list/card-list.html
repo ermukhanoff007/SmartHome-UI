@@ -1,5 +1,16 @@
 <div class="card-list">
-  @for (card of cards(); track card.id) {
-    <app-card-item [card]="card"> </app-card-item>
+  @for (card of cards(); track card.id; let i = $index) {
+    <app-card-item
+      [card]="card"
+      (edit)="onEdit($event)"
+      [tabId]="tabId()"
+      [editModeActive]="editMode()"
+      [index]="i"
+      [total]="cards().length"
+      (reorder)="onMove($event)"
+      (toggleDevices)="onToggleEvent($event)"
+      (updateDevices)="onUpdateStateEvent($event)"
+    >
+    </app-card-item>
   }
 </div>

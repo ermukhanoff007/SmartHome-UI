@@ -8,4 +8,5 @@ export interface Sensor {
   icon: string;
   label: string;
   value: SensorValue;
+  id: string;
 }

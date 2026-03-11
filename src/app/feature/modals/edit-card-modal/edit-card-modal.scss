@@ -1,0 +1,34 @@
+.edit-card-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.current-items-container {
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.current-items {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 4px;
+  justify-content: space-between;
+}
+.current-items-block {
+  height: 200px;
+  overflow: auto;
+}
+
+.add-entity-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-card-btns {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}

@@ -1,13 +1,38 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { CardItem } from '../card-item/card-item';
+import { Device } from '../../models/device';
 
 @Component({
   selector: 'app-card-list',
   imports: [CardItem],
   templateUrl: './card-list.html',
   styleUrl: './card-list.scss',
+  standalone: true,
 })
 export class CardList {
   public cards = input.required<Card[]>();
+  tabId = input.required<string>();
+  editMode = input.required<boolean>();
+
+  moveCard = output<{ tabId: string; cardId: string; newIdx: number }>();
+  edit = output<{ tabId: string; card: Card }>();
+  toggleEvent = output<{ deviceId: string; newState: boolean }>();
+  updateStateEvent = output<{ device: Device; state: boolean }>();
+
+  onEdit(event: { tabId: string; card: Card }) {
+    this.edit.emit(event);
+  }
+
+  onMove(event: { tabId: string; cardId: string; newIdx: number }) {
+    this.moveCard.emit(event);
+  }
+
+  onToggleEvent(event: { deviceId: string; newState: boolean }) {
+    this.toggleEvent.emit(event);
+  }
+
+  onUpdateStateEvent(event: { device: Device; state: boolean }) {
+    this.updateStateEvent.emit(event);
+  }
 }

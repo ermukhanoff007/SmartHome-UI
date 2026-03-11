@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="feat: implement the route">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/login/login.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/sidebar/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth.service.ts" afterDir="false" />
+    <list default="true" id="dafa107b-9563-4ffa-bbbc-f78a5ae09b20" name="Changes" comment="fix: refactor some stupid and reusable components">
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-item/card-item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/card-list/card-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/feature/tabs/tabs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/dashboard/dashboard.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on develop&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -92,6 +92,10 @@
       <workItem from="1770463633505" duration="45051000" />
       <workItem from="1771157615352" duration="1082000" />
       <workItem from="1771184524634" duration="27011000" />
+      <workItem from="1771512627090" duration="29000" />
+      <workItem from="1771860239181" duration="9365000" />
+      <workItem from="1772457908250" duration="7698000" />
+      <workItem from="1772723687990" duration="31039000" />
     </task>
     <task id="LOCAL-00001" summary="init: init the project">
       <option name="closed" value="true" />
@@ -173,7 +177,127 @@
       <option name="project" value="LOCAL" />
       <updated>1771312935273</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: implement the logout button">
+      <option name="closed" value="true" />
+      <created>1771314931246</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1771314931246</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix: fix the eslint errors,not-found-page">
+      <option name="closed" value="true" />
+      <created>1771511314600</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1771511314600</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: implement NgRX, dashboard-store">
+      <option name="closed" value="true" />
+      <created>1771960613988</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1771960613988</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: implement editMode, addTab dialog">
+      <option name="closed" value="true" />
+      <created>1772093999976</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1772093999976</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: implement interactions with tab">
+      <option name="closed" value="true" />
+      <created>1772207584834</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1772207584835</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: implement addCard">
+      <option name="closed" value="true" />
+      <created>1772269758130</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1772269758130</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: implement editCard">
+      <option name="closed" value="true" />
+      <created>1772292105659</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1772292105659</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: implement toggleDevice">
+      <option name="closed" value="true" />
+      <created>1772363048232</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1772363048232</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: implement add-dashboard">
+      <option name="closed" value="true" />
+      <created>1772368143551</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1772368143551</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: implement delete-dashboard, but with issues">
+      <option name="closed" value="true" />
+      <created>1772380106471</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1772380106471</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix: fix linting errors and login page ui">
+      <option name="closed" value="true" />
+      <created>1772430930682</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1772430930682</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix: fix errors with dashboard">
+      <option name="closed" value="true" />
+      <created>1772471028615</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1772471028616</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix: fix the delete button ui">
+      <option name="closed" value="true" />
+      <created>1772473795589</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1772473795589</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: fix the delete and seve errors">
+      <option name="closed" value="true" />
+      <created>1772737503575</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1772737503576</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix: refactor some stupid and reusable components">
+      <option name="closed" value="true" />
+      <created>1773218237384</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1773218237384</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +308,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -200,6 +330,21 @@
     <MESSAGE value="init: start the task" />
     <MESSAGE value="feat: implement auth-service" />
     <MESSAGE value="feat: implement the route" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement the route" />
+    <MESSAGE value="feat: implement the logout button" />
+    <MESSAGE value="fix: fix the eslint errors,not-found-page" />
+    <MESSAGE value="feat: implement NgRX, dashboard-store" />
+    <MESSAGE value="feat: implement editMode, addTab dialog" />
+    <MESSAGE value="feat: implement interactions with tab" />
+    <MESSAGE value="feat: implement addCard" />
+    <MESSAGE value="feat: implement editCard" />
+    <MESSAGE value="feat: implement toggleDevice" />
+    <MESSAGE value="feat: implement add-dashboard" />
+    <MESSAGE value="feat: implement delete-dashboard, but with issues" />
+    <MESSAGE value="fix: fix linting errors and login page ui" />
+    <MESSAGE value="fix: fix errors with dashboard" />
+    <MESSAGE value="fix: fix the delete button ui" />
+    <MESSAGE value="fix: fix the delete and seve errors" />
+    <MESSAGE value="fix: refactor some stupid and reusable components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: refactor some stupid and reusable components" />
   </component>
 </project>

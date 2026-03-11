@@ -1,55 +1,173 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Tabs } from '../../feature/tabs/tabs';
 import { CardList } from '../../components/card-list/card-list';
 import { AsyncPipe } from '@angular/common';
-import { DashboardService } from '../../services/dashboard.service';
-import { BehaviorSubject, combineLatest, map } from 'rxjs';
+
 import { ActivatedRoute } from '@angular/router';
-import { DashboardRouteData } from '../../dashboard.resolver';
+import { Store } from '@ngrx/store';
+import {
+  selectSelectedDashboard,
+  selectSelectedTab,
+} from '../../store/dashboard/dashboard.selector';
+import * as DashboardActions from '../../store/dashboard/dashboard.actions';
+import { MatIcon } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTabModal } from '../../feature/modals/add-tab-modal/add-tab-modal';
+import { AddCardModal } from '../../feature/modals/add-card-modal/add-card-modal';
+import { addCard, editCardContent } from '../../store/dashboard/dashboard.actions';
+import { MatButton } from '@angular/material/button';
+import { Card } from '../../models/card.model';
+import { EditCardModal } from '../../feature/modals/edit-card-modal/edit-card-modal';
+import { ApiService } from '../../services/api.service';
+import { Sensor } from '../../models/sensor';
+import { Device } from '../../models/device';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Tabs, CardList, AsyncPipe],
+  imports: [Tabs, CardList, AsyncPipe, MatIcon, ReactiveFormsModule, MatButton],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
+  standalone: true,
 })
 export class Dashboard implements OnInit {
-  dashboardService = inject(DashboardService);
+  private store = inject(Store);
   private route = inject(ActivatedRoute);
-  selectedTabId$ = new BehaviorSubject<string | null>(null);
+  private dialog = inject(MatDialog);
+  private api = inject(ApiService);
 
-  isEmpty$ = this.route.data.pipe(
-    map((data) => {
-      const routeData = data['routeData'] as DashboardRouteData;
-      return !routeData?.dashboardId;
-    }),
-  );
+  devices = signal<Sensor[] | Device[]>([]);
+  editMode = signal(false);
+
+  dashboard$ = this.store.select(selectSelectedDashboard);
+  tab$ = this.store.select(selectSelectedTab);
 
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      const routeData = data['routeData'] as DashboardRouteData;
-      if (!routeData?.dashboardId) return;
+    this.route.paramMap.subscribe((param) => {
+      const dashboardId = param.get('dashboardId');
+      const tabId = param.get('tabId');
 
-      this.dashboardService.setFromRoute(routeData.dashboardId);
-      this.selectedTabId$.next(routeData.tabId ?? null);
+      if (!dashboardId) return;
+
+      this.store.dispatch(DashboardActions.loadDashboard({ dashboardId }));
+
+      if (tabId) {
+        this.store.dispatch(DashboardActions.selectTab({ tabId }));
+      }
+    });
+    this.api.getDevices().subscribe((devices) => {
+      this.devices.set(devices);
     });
   }
 
-  selectedTab$ = combineLatest([
-    this.dashboardService.selectedDashboard$,
-    this.selectedTabId$,
-  ]).pipe(
-    map(([dashboard, tabId]) => {
-      if (!dashboard) return null;
-
-      if (!tabId) {
-        return dashboard.tabs[0];
-      }
-      return dashboard.tabs.find((tab) => tab.id === tabId) ?? dashboard.tabs[0];
-    }),
-  );
-
   onChangeTab(tabId: string) {
-    this.selectedTabId$.next(tabId);
+    this.store.dispatch(DashboardActions.selectTab({ tabId }));
+  }
+
+  enterEdit() {
+    this.store.dispatch(DashboardActions.enterEditMode());
+    this.editMode.set(true);
+  }
+
+  save() {
+    const dashboardId = this.route.snapshot.params['dashboardId'];
+    this.store.dispatch(DashboardActions.saveChanges({ dashboardId: dashboardId }));
+    this.editMode.set(false);
+  }
+
+  discard() {
+    this.store.dispatch(DashboardActions.discardChange());
+    this.editMode.set(false);
+  }
+
+  openAddTabDialog() {
+    const dialogRef = this.dialog.open(AddTabModal, {
+      width: '400px',
+    });
+    dialogRef.afterClosed().subscribe((title) => {
+      if (!title) return;
+
+      this.store.dispatch(DashboardActions.addTab({ title }));
+    });
+  }
+
+  removeTab(tabId: string) {
+    this.store.dispatch(DashboardActions.removeTab({ tabId }));
+  }
+  renameTab({ tabId, newTitle }: { tabId: string; newTitle: string }) {
+    this.store.dispatch(DashboardActions.renameTab({ tabId, newTitle }));
+  }
+  moveTab({ tabId, direction }: { tabId: string; direction: 'left' | 'right' }) {
+    this.store.dispatch(DashboardActions.reorderTab({ tabId, direction }));
+  }
+
+  addCard(tabId: string) {
+    const dialogRef = this.dialog.open(AddCardModal);
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.store.dispatch(
+          addCard({
+            tabId,
+            layout: res.layout,
+            title: res.title,
+          }),
+        );
+      }
+    });
+  }
+
+  onEditCard(event: { tabId: string; card: Card }) {
+    const dialogRef = this.dialog.open(EditCardModal, {
+      data: {
+        card: event.card,
+        devices: this.devices(),
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.store.dispatch(
+          editCardContent({
+            tabId: event.tabId,
+            cardId: event.card.id,
+            title: res.title,
+            items: res.items,
+          }),
+        );
+      }
+    });
+  }
+
+  moveCard(event: { tabId: string; cardId: string; newIdx: number }) {
+    this.store.dispatch(
+      DashboardActions.reorderCard({
+        tabId: event.tabId,
+        cardId: event.cardId,
+        newIdx: event.newIdx,
+      }),
+    );
+  }
+
+  toggleDevicesEvent(event: { deviceId: string; newState: boolean }) {
+    this.store.dispatch(
+      DashboardActions.toggleDevice({
+        deviceId: event.deviceId,
+        newState: event.newState,
+      }),
+    );
+  }
+
+  updateDeviceStateEvent(event: { device: Device; state: boolean }) {
+    this.store.dispatch(
+      DashboardActions.toggleDevice({
+        deviceId: event.device.id,
+        newState: event.state,
+      }),
+    );
+  }
+
+  deleteDashboard() {
+    const dashboardId = this.route.snapshot.params['dashboardId'];
+    this.store.dispatch(DashboardActions.deleteDashboard({ dashboardId: dashboardId }));
   }
 }

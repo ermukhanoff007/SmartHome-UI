@@ -1,19 +1,29 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { Device } from '../../models/device';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { SensorComponent } from '../sensor/sensor';
 import { DeviceComponent } from '../device/device';
 import { ActiveHighlight } from '../../directives/active-highlight';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-card-item',
-  imports: [MatSlideToggle, SensorComponent, DeviceComponent, ActiveHighlight],
+  imports: [MatSlideToggle, SensorComponent, DeviceComponent, ActiveHighlight, MatIcon],
   templateUrl: './card-item.html',
   styleUrl: './card-item.scss',
 })
 export class CardItem {
   public card = input.required<Card>();
+  tabId = input.required<string>();
+  editModeActive = input.required<boolean>();
+  index = input.required<number>();
+  total = input.required<number>();
+
+  edit = output<{ tabId: string; card: Card }>();
+  reorder = output<{ tabId: string; cardId: string; newIdx: number }>();
+  toggleDevices = output<{ deviceId: string; newState: boolean }>();
+  updateDevices = output<{ device: Device; state: boolean }>();
 
   devices = computed<Device[]>(
     () => this.card()?.items.filter((i) => i.type === 'device') as Device[],
@@ -22,15 +32,39 @@ export class CardItem {
 
   groupState = computed(() => this.devices().some((d) => d.state));
 
-  toggleAll(value: boolean) {
+  toggleAllDev(value: boolean) {
     this.devices().forEach((device) => {
-      device.state = value;
+      this.toggleDevices.emit({ deviceId: device.id, newState: value });
     });
   }
 
   updateDevice(device: Device, state: boolean): void {
-    device.state = state;
+    this.updateDevices.emit({ device: device, state: state });
   }
 
-  protected readonly onchange = onchange;
+  onEdit() {
+    this.edit.emit({
+      tabId: this.tabId(),
+      card: this.card(),
+    });
+  }
+  moveLeft() {
+    if (this.index() === 0) return;
+
+    this.reorder.emit({
+      tabId: this.tabId(),
+      cardId: this.card().id,
+      newIdx: this.index() - 1,
+    });
+  }
+
+  moveRight() {
+    if (this.index() === this.total()) return;
+
+    this.reorder.emit({
+      tabId: this.tabId(),
+      cardId: this.card().id,
+      newIdx: this.index() + 1,
+    });
+  }
 }

@@ -2,18 +2,31 @@
   <div class="card-header">
     <h3>{{ card()?.title }}</h3>
     @if (hasGroupToggle()) {
-      <mat-slide-toggle [checked]="groupState()" (change)="toggleAll($event.checked)" />
+      <mat-slide-toggle [checked]="groupState()" (change)="toggleAllDev($event.checked)" />
     }
   </div>
 
-  <div class="card-content" [class]="card().layout">
-    @for (item of card()?.items; track item.icon) {
-      @if (item.type === 'sensor') {
-        <app-sensor [sensor]="item" [layout]="card().layout"></app-sensor>
+  <div class="card-content-container">
+    <div class="card-content" [class]="card().layout">
+      @for (item of card()?.items; track item.id) {
+        @if (item.type === 'sensor') {
+          <app-sensor [sensor]="item" [layout]="card().layout"></app-sensor>
+        }
+        @if (item.type === 'device') {
+          <app-device [device]="item" (changeState)="updateDevice(item, $event)"> </app-device>
+        }
       }
-      @if (item.type === 'device') {
-        <app-device [device]="item" (changeState)="updateDevice(item, $event)"> </app-device>
-      }
+    </div>
+    @if (editModeActive()) {
+      <div class="edit-btns-container">
+        @if (index() !== 0) {
+          <button (click)="moveLeft()"><mat-icon>arrow_left</mat-icon></button>
+        }
+        @if (index() !== total() - 1) {
+          <button (click)="moveRight()"><mat-icon>arrow_right</mat-icon></button>
+        }
+        <button (click)="onEdit()">:</button>
+      </div>
     }
   </div>
 </div>

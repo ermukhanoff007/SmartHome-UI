@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IDashboards } from '../models/dashboard';
 import { Device } from '../models/device';
+import { Sensor } from '../models/sensor';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -27,15 +28,19 @@ export class ApiService {
     return this.http.get<IDashboards>(`${this.base}/dashboards/${id}`);
   }
 
-  updateDashboard(id: string, data: IDashboards) {
-    return this.http.put<IDashboards>(`${this.base}/dashboards/${id}`, data);
+  updateDashboard(dashboardId: string, data: IDashboards) {
+    return this.http.put<IDashboards>(`${this.base}/dashboards/${dashboardId}`, data);
   }
 
-  deleteDashboard(id: string) {
-    return this.http.delete(`${this.base}/dashboards/${id}`);
+  createDashboard(dashboard: IDashboards) {
+    return this.http.post<IDashboards>(`${this.base}/dashboards`, dashboard);
+  }
+
+  deleteDashboard(dashboardId: string) {
+    return this.http.delete(`${this.base}/dashboards/${dashboardId}`);
   }
   getDevices() {
-    return this.http.get<Device[]>(`${this.base}/devices`);
+    return this.http.get<Device[] | Sensor[]>(`${this.base}/devices`);
   }
 
   patchDevice(id: string, state: boolean) {

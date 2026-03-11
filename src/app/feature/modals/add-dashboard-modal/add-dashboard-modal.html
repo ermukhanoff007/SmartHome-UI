@@ -1,0 +1,29 @@
+<form [formGroup]="form" class="add-dash-container">
+  <div class="add-dash-input">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Dashboard ID </mat-label>
+      <input matInput formControlName="id" />
+    </mat-form-field>
+    @if (form.touched && form.get('id')?.hasError('required')) {
+      <p>ID is required</p>
+    }
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Dashboard Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    @if (form.touched && form.get('title')?.hasError('required')) {
+      <p>Title is required</p>
+    }
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Dashboard Icon</mat-label>
+      <input matInput formControlName="icon" />
+    </mat-form-field>
+    @if (form.touched && form.get('icon')?.hasError('required')) {
+      <p>Icon is required</p>
+    }
+  </div>
+  <div style="margin-top: 20px">
+    <button mat-raised-button (click)="save()">Add</button>
+    <button mat-button (click)="close()">Cancel</button>
+  </div>
+</form>

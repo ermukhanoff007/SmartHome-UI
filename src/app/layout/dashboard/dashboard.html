@@ -1,15 +1,60 @@
-@if (isEmpty$ | async) {
+@if (!(dashboard$ | async)?.tabs?.length) {
   <div class="empty-state">
     <h2>No dashboards available</h2>
   </div>
 }
+<div class="tabs-container">
+  <div class="tabs-items">
+    <app-tabs
+      [tabs]="(dashboard$ | async)?.tabs ?? []"
+      [editMode]="editMode()"
+      (changeTab)="onChangeTab($event)"
+      (tabMove)="moveTab($event)"
+      (removeTab)="removeTab($event)"
+      (renameTab)="renameTab($event)"
+    >
+    </app-tabs>
+    @if (editMode()) {
+      <button class="addTabBtn" (click)="openAddTabDialog()">+</button>
+    }
+  </div>
 
-<app-tabs
-  [tabs]="(dashboardService.selectedDashboard$ | async)?.tabs ?? []"
-  (OnChangeTab)="onChangeTab($event)"
->
-</app-tabs>
+  @if (!editMode()) {
+    <div style="display: flex; margin-left: auto">
+      <button class="edit-btn" (click)="enterEdit()">
+        <mat-icon>edit</mat-icon>
+      </button>
 
-@if (selectedTab$ | async; as dash) {
-  <app-card-list [cards]="dash.cards"></app-card-list>
+      <button (click)="deleteDashboard()" class="delete-btn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  }
+  @if (editMode()) {
+    <div class="actions-container">
+      <button class="actions-save" (click)="save()">Save</button>
+      <button class="actions-discard" (click)="discard()">Discard</button>
+    </div>
+  }
+</div>
+
+@if (tab$ | async; as dash) {
+  <div class="cards-container">
+    <div class="cards-item">
+      <app-card-list
+        [cards]="dash.cards"
+        (edit)="onEditCard($event)"
+        [tabId]="dash.id"
+        [editMode]="editMode()"
+        (moveCard)="moveCard($event)"
+        (toggleEvent)="toggleDevicesEvent($event)"
+        (updateStateEvent)="updateDeviceStateEvent($event)"
+      ></app-card-list>
+    </div>
+    @if (editMode()) {
+      <div class="add-card-container">
+        <button class="add-card-btn" mat-raised-button (click)="addCard(dash.id)">Add Card</button>
+      </div>
+    }
+  </div>
 }
